@@ -25,7 +25,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Materi</a>
+                        <a class="nav-link" href="#">Materi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Perihal</a>
