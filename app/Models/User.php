@@ -20,7 +20,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role',
         'password',
+        'photo'
     ];
 
     /**
@@ -41,4 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    function siswa()
+    {
+        return $this->hasOne(Siswa::class);
+    }
+    function chat(){
+        return $this->hasMany(Chat::class);
+    }
 }

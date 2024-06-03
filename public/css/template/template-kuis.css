@@ -1,0 +1,74 @@
+*{
+    font-family: "Lato", sans-serif;
+}
+/* NAVBAR */
+.navbar{
+    padding: 0.95em 1em;
+    background-color: #64B3B3;
+    /* border-bottom: #141E46 1px solid; */
+}
+.navbar *{
+    color: #141E46;
+}
+#user-avatar{
+    border: 2px solid #141E46;
+    border-radius: 50%;
+    width: 35px;
+}
+
+/* CONTENT */
+/* SOAL */
+#card-soal{
+    min-height: 430px;
+    
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#soal-content{
+    max-height: 350px;
+}
+#no-soal span{
+    background-color: #64B3B3;
+    padding: 0.25em 0.5em;
+    border-radius: 10px;
+}
+
+.waktu-container{
+    background-color: #64B3B3;
+    font-weight: bold;
+    padding: 0.25em 0.75em;
+    border-radius: 10px;
+}
+
+/* NAV SOAL */
+.nav-soal-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #64B3B3;
+    background-color: white;
+    width: 3em;
+    height: 3em;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.nav-soal-item.answered{
+    background-color: #64B3B3;
+}
+.nav-soal-item.half-answered{
+    background-color: #FFA62F;
+}
+
+/* FOOTER */
+.footer{
+    position: relative;
+    margin-top: 0.5em;
+    /* left: 270px; */
+    /* right: 0;
+    bottom: 0; */
+    border-top: 1px solid #141E46;
+}

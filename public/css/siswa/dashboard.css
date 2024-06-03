@@ -1,0 +1,31 @@
+.card-bio{
+    border-radius: 20px;
+    background-color: #C4DFDF;
+}
+.table-bio th{
+    padding-right: 2em
+}
+.table-bio{
+    color: black
+}
+
+.btn-icon{
+    display: block;
+    padding: 2em 3em;
+    border-radius: 50%;
+    background-color: #C4DFDF;
+    color: white;
+}
+.btn-icon i{
+    font-size: 80px;
+}
+.btn-desc{
+    color: white;
+    font-weight: bold;
+    width: max-content;
+    margin-top: -35px;
+    margin: -35px auto 0 auto;
+    background-color: #4F6F52;
+    border-radius: 20px;
+    padding: 1em 1em;
+}

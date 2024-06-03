@@ -1,0 +1,24 @@
+*{
+    font-family: "Lato", sans-serif;
+}
+h1,h2,h3,h4,h5{
+    color: #176B87 !important;
+}
+.btn{
+    width: 8em;
+}
+.btn-green{
+    background-color: #64CCC5;
+}
+.btn-green:hover{
+    background-color: #50a09b;
+}
+#form-wrapper{
+    min-width: 100vh;
+}
+#footer{
+    border-top: 2px solid black;
+}
+.container-fluid{
+    background-color: #8DECB4;
+}

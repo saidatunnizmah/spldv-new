@@ -1,0 +1,13 @@
+.kuis-checkbox{
+    flex-wrap: wrap;
+    gap: 1em;
+    border: 2px dashed #64B3B3;
+    padding: 1em 0.5em;
+}
+math-field{
+    width: 8em;
+    border-radius: 10px;
+}
+math-field::part(menu-toggle){
+    display: none;
+}
