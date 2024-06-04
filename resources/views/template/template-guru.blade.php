@@ -22,9 +22,7 @@
     @include('template.sidebar-guru')
     
     <div id="content-wrapper" class="mt-4">
-        <div id="content">
-            @yield('content')
-        </div>
+        @yield('content')
         
         <footer class="footer">
             <div class="container-fluid">

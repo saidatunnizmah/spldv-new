@@ -1,0 +1,7 @@
+#siswaTabContent .card {
+    height: 100%;
+}
+
+#siswaTabContent h1,h5{
+    margin-bottom: 0;
+}
