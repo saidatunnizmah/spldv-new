@@ -24,7 +24,9 @@ use App\Http\Controllers\DashboardSiswaController;
 //     return view('welcome');
 // });
 
-Route::view('/', "landingpage");
+Route::view('/', "landingpage")->name('landingPage');
+Route::view('/landing-perihal', 'perihal')->name('landingPage.perihal');
+
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', "index")->name('login');
     Route::post('/login', "authenticate")->name('login.authenticate');

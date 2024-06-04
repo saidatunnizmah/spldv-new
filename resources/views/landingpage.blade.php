@@ -25,10 +25,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Materi</a>
+                        <a class="nav-link" href="{{ route('siswa.progress') }}">Materi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Perihal</a>
+                        <a class="nav-link" href="{{ route('landingPage.perihal') }}">Perihal</a>
                     </li>
                 </ul>
             </div>
