@@ -2,10 +2,10 @@
     font-family: "Lato", sans-serif;
 }
 .navbar{
-    background-color: #96E9C6 !important;
+    background-color: #50a09b !important;
 }
 .navbar *{
-    color: #176B87;
+    color: #dae1e4;
 }
 #user-avatar{
     border: 2px solid #176B87;
