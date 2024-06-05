@@ -144,7 +144,12 @@
             <div class="card materi-card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-5 position-relative">
+                            @if (auth()->user()->siswa->bab < 3)
+                                <div class="materi-lock">
+                                    <i class="bi bi-lock-fill fs-3"></i>
+                                </div>
+                            @endif
                             <a href="{{ route('siswa.kuis', ['jenis'=>4]) }}" class="materi-title">Evaluasi</a>
                         </div>
                         <div class="col-7 border-start">

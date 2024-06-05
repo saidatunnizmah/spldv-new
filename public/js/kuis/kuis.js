@@ -6,7 +6,7 @@ let base_path = window.location.origin
 let urlSplitted = url.split('/')
 
 let jenis = urlSplitted[urlSplitted.length-1]
-let soal = 4
+let soal = 1
 let userAnswer = {
     
 }
@@ -20,6 +20,18 @@ if (jenis == 2) {
     userAnswer['soal3_1'] = 'x'
     userAnswer['soal4_1'] = 'x'
     userAnswer['soal5_1'] = 'x'
+
+    userAnswer['soal6_1'] = '1'
+    userAnswer['soal6_2'] = 'x'
+    userAnswer['soal6_16'] = '1'
+
+    userAnswer['soal7_1'] = '1'
+    userAnswer['soal7_2'] = 'x'
+    userAnswer['soal7_16'] = '1'
+    
+    userAnswer['soal8_1'] = '1'
+    userAnswer['soal8_2'] = 'x'
+    userAnswer['soal8_16'] = '1'
 }
 if (jenis == 3) {
     userAnswer['soal3_7'] = '1'
