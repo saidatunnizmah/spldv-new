@@ -64,8 +64,8 @@ class KuisController extends Controller
         ],
         2 => [
             'kuis' => "Penyelesaian SPLDV",
-            'jumlahSoal' => 5,
-            'waktu' => 30,
+            'jumlahSoal' => 8,
+            'waktu' => 60,
             'keyAnswer' => []
         ],
         3 => [
@@ -178,7 +178,8 @@ class KuisController extends Controller
                 [3, 4, -7, 2, 1, -3, -1, -1],
             ];
 
-            for ($i = 1; $i <= 5; $i++) {
+            // Set default answer (-)
+            for ($i = 1; $i <= 10; $i++) {
                 for ($j = 1; $j <= 25; $j++) {
                     $keyAnswer['soal' . $i . '_' . $j] = '-';
                     if ($i == 5 && $j == 21) {
@@ -187,6 +188,7 @@ class KuisController extends Controller
                 }
             }
 
+            // Set keyanswer 1-4
             for ($i = 1; $i <= 4; $i++) {
                 if (
                     isset($userAnswer['soal' . $i . '_2']) && $userAnswer['soal' . $i . '_2'] != null &&
@@ -258,6 +260,7 @@ class KuisController extends Controller
                 $keyAnswer['soal' . $i . '_25'] = $xy[$i - 1][7];
             }
 
+            // Set keyanswer 5
             if (
                 isset($userAnswer['soal5_2']) && $userAnswer['soal5_2'] != null &&
                 isset($userAnswer['soal5_3']) && $userAnswer['soal5_3'] != null
@@ -324,6 +327,354 @@ class KuisController extends Controller
             }
             $keyAnswer['soal5_20'] = 0;
             $keyAnswer['soal5_21'] = -2;
+
+            // Set keyanswer 6-10
+            $xy_68= [
+                [7,-4,19,5,2,33,5,4],
+                [4,6,26,2,4,16,2,3],
+                [8,-3,-7,4,2,14,1,5]
+            ];
+            for ($i=6; $i <= 8; $i++) { 
+                $keyAnswer['soal'.$i.'_1'] = $userAnswer['soal'.$i.'_1'];
+                $keyAnswer['soal'.$i.'_2'] = $userAnswer['soal'.$i.'_2'];
+                $keyAnswer['soal'.$i.'_16'] = $userAnswer['soal'.$i.'_16'];
+
+                if ($userAnswer['soal'.$i.'_1']=='1') {
+                    $keyAnswer['soal'.$i.'_3'] = $xy_68[$i-6][0].'x';
+                    $keyAnswer['soal'.$i.'_4'] = $xy_68[$i-6][1].'y';
+                    $keyAnswer['soal'.$i.'_5'] = $xy_68[$i-6][2];
+                    
+                    if ($userAnswer['soal'.$i.'_2']=='x') {
+                        if ($xy_68[$i-6][1] > 0) {
+                            $y1 = '-'.$xy_68[$i-6][1];
+                        }else{
+                            $y1 = '+'.$xy_68[$i-6][1]*-1;
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_6'] = '\\frac{'.$xy_68[$i-6][2].$y1.'y}{'.$xy_68[$i-6][0].'}';
+    
+                        $keyAnswer['soal'.$i.'_7'] = $xy_68[$i-6][3].'\\left('.$keyAnswer['soal'.$i.'_6'].'\\right)' . $xy_68[$i-6][4]>0 ? '+'.$xy_68[$i-6][4] : $xy_68[$i-6][4] .'y';
+                        $keyAnswer['soal'.$i.'_8'] = $xy_68[$i-6][5];
+                        
+                        if ($i==6) {
+                            $keyAnswer['soal'.$i.'_9'] = '\\frac{95+20y}{7}+2y';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{95+34y}{7}';
+                            $keyAnswer['soal'.$i.'_13'] = '34';
+                            $keyAnswer['soal'.$i.'_14'] = '136';
+                        }elseif ($i==7) {
+                            $keyAnswer['soal'.$i.'_9'] = '\\frac{52-12y}{4}+4y';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{52+4y}{4}';
+                            $keyAnswer['soal'.$i.'_13'] = '4';
+                            $keyAnswer['soal'.$i.'_14'] = '12';
+                        }elseif ($i==8) {
+                            $keyAnswer['soal'.$i.'_9'] = '\\frac{-28+12y}{8}+2y';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{-28+28y}{8}';
+                            $keyAnswer['soal'.$i.'_13'] = '28';
+                            $keyAnswer['soal'.$i.'_14'] = '140';
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_10'] = $xy_68[$i-6][5];
+                        
+                        $keyAnswer['soal'.$i.'_12'] = $xy_68[$i-6][5];
+                            
+                        $keyAnswer['soal'.$i.'_15'] = $xy_68[$i-6][7];
+    
+                        if ($userAnswer['soal'.$i.'_16']=='1') {
+                            if ($xy_68[$i-6][1]>0) {
+                                $y = '+'.$xy_68[$i-6][1];
+                            }else{
+                                $y = $xy_68[$i-6][1];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][0].'x'.$y.'\\left('.$xy_68[$i-6][7].'\\right)';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][2];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][0].'x'.$xy_68[$i-6][1]*$xy_68[$i-6][7] > 0 ? '+'.$xy_68[$i-6][1]*$xy_68[$i-6][7] : $xy_68[$i-6][1]*$xy_68[$i-6][7];
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][2];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][0];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][1]*$xy_68[$i-6][7] > 0 ? $xy_68[$i-6][2] - $xy_68[$i-6][1]*$xy_68[$i-6][7] : $xy_68[$i-6][2] + $xy_68[$i-6][1]*$xy_68[$i-6][7];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][6];
+                        }else{
+                            if ($xy_68[$i-6][4]>0) {
+                                $y = '+'.$xy_68[$i-6][4];
+                            }else{
+                                $y = $xy_68[$i-6][4];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][3].'x'.$y.'\\left('.$xy_68[$i-6][7].'\\right)';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][5];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][3].'x'.$xy_68[$i-6][4]*$xy_68[$i-6][7] > 0 ? '+'.$xy_68[$i-6][4]*$xy_68[$i-6][7] : $xy_68[$i-6][4]*$xy_68[$i-6][7];
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][5];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][3];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][4]*$xy_68[$i-6][7] > 0 ? $xy_68[$i-6][5] - $xy_68[$i-6][4]*$xy_68[$i-6][7] : $xy_68[$i-6][5] + $xy_68[$i-6][4]*$xy_68[$i-6][7];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][6];
+                        }
+                    }else{
+                        if ($xy_68[$i-6][1] > 0) {
+                            $x1 = '-'.$xy_68[$i-6][0];
+                        }else{
+                            $x1 = '+'.$xy_68[$i-6][0]*-1;
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_6'] = '\\frac{'.$xy_68[$i-6][2].$x1.'x}{'.$xy_68[$i-6][1].'}';
+    
+                        $keyAnswer['soal'.$i.'_7'] = $xy_68[$i-6][3].'x'.$xy_68[$i-6][4]>0 ? '+'.$xy_68[$i-6][4] : $xy_68[$i-6][4] .'\\left(\\'.$keyAnswer['soal'.$i.'_6'].'\\right)';
+                        $keyAnswer['soal'.$i.'_8'] = $xy_68[$i-6][5];
+                        
+                        if ($i==6) {
+                            $keyAnswer['soal'.$i.'_9'] = '5x+\\frac{38-14x}{-4}';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{-34x+38}{-4}';
+                            $keyAnswer['soal'.$i.'_13'] = '-34';
+                            $keyAnswer['soal'.$i.'_14'] = '-170';
+                        }elseif ($i==7) {
+                            $keyAnswer['soal'.$i.'_9'] = '2x+\\frac{104-16x}{6}';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{104-4x}{6';
+                            $keyAnswer['soal'.$i.'_13'] = '-4';
+                            $keyAnswer['soal'.$i.'_14'] = '-8';
+                        }elseif ($i==8) {
+                            $keyAnswer['soal'.$i.'_9'] = '4x-\\frac{14-16x}{-3}';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{-14-28x}{-3}';
+                            $keyAnswer['soal'.$i.'_13'] = '-28';
+                            $keyAnswer['soal'.$i.'_14'] = '-28';
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_10'] = $xy_68[$i-6][5];
+                        
+                        $keyAnswer['soal'.$i.'_12'] = $xy_68[$i-6][5];
+                            
+                        $keyAnswer['soal'.$i.'_15'] = $xy_68[$i-6][6];
+    
+                        if ($userAnswer['soal'.$i.'_16']=='1') {
+                            if ($xy_68[$i-6][1]>0) {
+                                $y = '+'.$xy_68[$i-6][1];
+                            }else{
+                                $y = $xy_68[$i-6][1];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][0].'\\left('.$xy_68[$i-6][6].'\\right)'.$y.'y';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][2];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][0]*$xy_68[$i-6][6].$y.'y';
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][2];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][1];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][0]*$xy_68[$i-6][6]>0 ? $xy_68[$i-6][2]-$xy_68[$i-6][0]*$xy_68[$i-6][6]: $xy_68[$i-6][2]+$xy_68[$i-6][0]*$xy_68[$i-6][6];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][7];
+                        }else{
+                            if ($xy_68[$i-6][4]>0) {
+                                $y = '+'.$xy_68[$i-6][4];
+                            }else{
+                                $y = $xy_68[$i-6][4];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][3].'\\left('.$xy_68[$i-6][6].'\\right)'.$y.'y';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][5];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][3]*$xy_68[$i-6][6].$y.'y';
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][5];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][4];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][3]*$xy_68[$i-6][6]>0 ? $xy_68[$i-6][5]-$xy_68[$i-6][3]*$xy_68[$i-6][6]: $xy_68[$i-6][5]+$xy_68[$i-6][3]*$xy_68[$i-6][6];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][7];
+                        }
+                    }
+                }else{
+                    $keyAnswer['soal'.$i.'_3'] = $xy_68[$i-6][3].'x';
+                    $keyAnswer['soal'.$i.'_4'] = $xy_68[$i-6][4].'y';
+                    $keyAnswer['soal'.$i.'_5'] = $xy_68[$i-6][5];
+                    
+                    if ($userAnswer['soal'.$i.'_2']=='x') {
+                        if ($xy_68[$i-6][1] > 0) {
+                            $y1 = '-'.$xy_68[$i-6][4];
+                        }else{
+                            $y1 = '+'.$xy_68[$i-6][4]*-1;
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_6'] = '\\frac{'.$xy_68[$i-6][5].$y1.'y}{'.$xy_68[$i-6][3].'}';
+    
+                        $keyAnswer['soal'.$i.'_7'] = $xy_68[$i-6][0].'\\left('.$keyAnswer['soal'.$i.'_6'].'\\right)' . $xy_68[$i-6][1]>0 ? '+'.$xy_68[$i-6][1] : $xy_68[$i-6][1] .'y';
+                        $keyAnswer['soal'.$i.'_8'] = $xy_68[$i-6][2];
+                        
+                        if ($i==6) {
+                            $keyAnswer['soal'.$i.'_9'] = '\\frac{231-14y}{5}-4y';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{231-34y}{5}';
+                            $keyAnswer['soal'.$i.'_13'] = '-34';
+                            $keyAnswer['soal'.$i.'_14'] = '-136';
+                        }elseif ($i==7) {
+                            $keyAnswer['soal'.$i.'_9'] = '\\frac{64-16y}{2}+6y';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{64-4y}{2}';
+                            $keyAnswer['soal'.$i.'_13'] = '-4';
+                            $keyAnswer['soal'.$i.'_14'] = '-12';
+                        }elseif ($i==8) {
+                            $keyAnswer['soal'.$i.'_9'] = '\\frac{112-16y}{4}-3y';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{112-28y}{4}';
+                            $keyAnswer['soal'.$i.'_13'] = '-28';
+                            $keyAnswer['soal'.$i.'_14'] = '-140';
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_10'] = $xy_68[$i-6][2];
+                        
+                        $keyAnswer['soal'.$i.'_12'] = $xy_68[$i-6][2];
+                            
+                        $keyAnswer['soal'.$i.'_15'] = $xy_68[$i-6][7];
+    
+                        if ($userAnswer['soal'.$i.'_16']=='1') {
+                            if ($xy_68[$i-6][1]>0) {
+                                $y = '+'.$xy_68[$i-6][1];
+                            }else{
+                                $y = $xy_68[$i-6][1];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][0].'x'.$y.'\\left('.$xy_68[$i-6][7].'\\right)';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][2];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][0].'x'.$xy_68[$i-6][1]*$xy_68[$i-6][7] > 0 ? '+'.$xy_68[$i-6][1]*$xy_68[$i-6][7] : $xy_68[$i-6][1]*$xy_68[$i-6][7];
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][2];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][0];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][1]*$xy_68[$i-6][7] > 0 ? $xy_68[$i-6][2] - $xy_68[$i-6][1]*$xy_68[$i-6][7] : $xy_68[$i-6][2] + $xy_68[$i-6][1]*$xy_68[$i-6][7];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][6];
+                        }else{
+                            if ($xy_68[$i-6][4]>0) {
+                                $y = '+'.$xy_68[$i-6][4];
+                            }else{
+                                $y = $xy_68[$i-6][4];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][3].'x'.$y.'\\left('.$xy_68[$i-6][7].'\\right)';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][5];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][3].'x'.$xy_68[$i-6][4]*$xy_68[$i-6][7] > 0 ? '+'.$xy_68[$i-6][4]*$xy_68[$i-6][7] : $xy_68[$i-6][4]*$xy_68[$i-6][7];
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][5];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][3];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][4]*$xy_68[$i-6][7] > 0 ? $xy_68[$i-6][5] - $xy_68[$i-6][4]*$xy_68[$i-6][7] : $xy_68[$i-6][5] + $xy_68[$i-6][4]*$xy_68[$i-6][7];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][6];
+                        }
+                    }else{
+                        if ($xy_68[$i-6][1] > 0) {
+                            $x1 = '-'.$xy_68[$i-6][3];
+                        }else{
+                            $x1 = '+'.$xy_68[$i-6][3]*-1;
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_6'] = '\\frac{'.$xy_68[$i-6][5].$x1.'x}{'.$xy_68[$i-6][4].'}';
+    
+                        $keyAnswer['soal'.$i.'_7'] = $xy_68[$i-6][0].'x'.$xy_68[$i-6][1]>0 ? '+'.$xy_68[$i-6][1] : $xy_68[$i-6][1] .'\\left(\\'.$keyAnswer['soal'.$i.'_6'].'\\right)';
+                        $keyAnswer['soal'.$i.'_8'] = $xy_68[$i-6][2];
+                        
+                        if ($i==6) {
+                            $keyAnswer['soal'.$i.'_9'] = '7x-\\frac{132-20x}{2}';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{-132+34x}{2}';
+                            $keyAnswer['soal'.$i.'_13'] = '34';
+                            $keyAnswer['soal'.$i.'_14'] = '170';
+                        }elseif ($i==7) {
+                            $keyAnswer['soal'.$i.'_9'] = '4x+\\frac{96-12x}{4}';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{4x+96}{4}';
+                            $keyAnswer['soal'.$i.'_13'] = '4';
+                            $keyAnswer['soal'.$i.'_14'] = '8';
+                        }elseif ($i==8) {
+                            $keyAnswer['soal'.$i.'_9'] = '8x-\\frac{42+12x}{2}';
+                            $keyAnswer['soal'.$i.'_11'] = '\\frac{28x-42}{2}';
+                            $keyAnswer['soal'.$i.'_13'] = '28';
+                            $keyAnswer['soal'.$i.'_14'] = '28';
+                        }
+                        
+                        $keyAnswer['soal'.$i.'_10'] = $xy_68[$i-6][2];
+                        
+                        $keyAnswer['soal'.$i.'_12'] = $xy_68[$i-6][2];
+                            
+                        $keyAnswer['soal'.$i.'_15'] = $xy_68[$i-6][6];
+    
+                        if ($userAnswer['soal'.$i.'_16']=='1') {
+                            if ($xy_68[$i-6][1]>0) {
+                                $y = '+'.$xy_68[$i-6][1];
+                            }else{
+                                $y = $xy_68[$i-6][1];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][0].'\\left('.$xy_68[$i-6][6].'\\right)'.$y.'y';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][2];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][0]*$xy_68[$i-6][6].$y.'y';
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][2];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][1];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][0]*$xy_68[$i-6][6]>0 ? $xy_68[$i-6][2]-$xy_68[$i-6][0]*$xy_68[$i-6][6]: $xy_68[$i-6][2]+$xy_68[$i-6][0]*$xy_68[$i-6][6];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][7];
+                        }else{
+                            if ($xy_68[$i-6][4]>0) {
+                                $y = '+'.$xy_68[$i-6][4];
+                            }else{
+                                $y = $xy_68[$i-6][4];
+                            }
+                            $keyAnswer['soal'.$i.'_17'] = $xy_68[$i-6][3].'\\left('.$xy_68[$i-6][6].'\\right)'.$y.'y';
+                            $keyAnswer['soal'.$i.'_18'] = $xy_68[$i-6][5];
+    
+                            $keyAnswer['soal'.$i.'_19'] = $xy_68[$i-6][3]*$xy_68[$i-6][6].$y.'y';
+                            $keyAnswer['soal'.$i.'_20'] = $xy_68[$i-6][5];
+                            
+                            $keyAnswer['soal'.$i.'_21'] = $xy_68[$i-6][4];
+                            $keyAnswer['soal'.$i.'_22'] = $xy_68[$i-6][3]*$xy_68[$i-6][6]>0 ? $xy_68[$i-6][5]-$xy_68[$i-6][3]*$xy_68[$i-6][6]: $xy_68[$i-6][5]+$xy_68[$i-6][3]*$xy_68[$i-6][6];
+                            
+                            $keyAnswer['soal'.$i.'_23'] = $xy_68[$i-6][7];
+                        }
+                    }
+                }
+                $keyAnswer['soal'.$i.'_24'] = $xy_68[$i-6][6];
+                $keyAnswer['soal'.$i.'_25'] = $xy_68[$i-6][7];
+            }
+
+            // Set keyanswer 6
+            // if ($userAnswer['soal6_1']=='1') {
+            //     if ($userAnswer['soal6_2']=='x') {
+            //         $keyAnswer['soal6_3'] = '7x';
+            //         $keyAnswer['soal6_4'] = '-4y';
+            //         $keyAnswer['soal6_5'] = '19';
+            //         $keyAnswer['soal6_6'] = '\\frac{19+4y}{7}';
+
+            //         $keyAnswer['soal6_7'] = '5\\left(\\frac{19+4y}{7}\\right)+2y';
+            //         $keyAnswer['soal6_8'] = '33';
+                    
+            //         $keyAnswer['soal6_9'] = '\\frac{95+20y}{7}+2y';
+            //         $keyAnswer['soal6_10'] = '33';
+                    
+            //         $keyAnswer['soal6_11'] = '\\frac{95+34y}{7}';
+            //         $keyAnswer['soal6_12'] = '33';
+                    
+            //         $keyAnswer['soal6_13'] = '34';
+            //         $keyAnswer['soal6_14'] = '136';
+
+            //         $keyAnswer['soal6_15'] = '4';
+
+            //         if ($userAnswer['6_16']=='1') {
+            //             $keyAnswer['soal6_17'] = '7x-4\\left(4\\right)';
+            //             $keyAnswer['soal6_18'] = '19';
+
+            //             $keyAnswer['soal6_19'] = '7x-16';
+            //             $keyAnswer['soal6_20'] = '19';
+                        
+            //             $keyAnswer['soal6_21'] = '7';
+            //             $keyAnswer['soal6_22'] = '35';
+                        
+            //             $keyAnswer['soal6_23'] = '5';
+            //         }else{
+            //             $keyAnswer['soal6_17'] = '5x-2\\left(4\\right)';
+            //             $keyAnswer['soal6_18'] = '33';
+
+            //             $keyAnswer['soal6_19'] = '5x+8';
+            //             $keyAnswer['soal6_20'] = '33';
+                        
+            //             $keyAnswer['soal6_21'] = '5';
+            //             $keyAnswer['soal6_22'] = '25';
+                        
+            //             $keyAnswer['soal6_23'] = '5';
+            //         }
+            //     }
+            // }
         }
 
         if ($request->jenisKuis == '3') {
