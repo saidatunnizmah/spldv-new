@@ -1,6 +1,7 @@
 history.pushState(null, null, window.location.href);
 history.back();
 window.onpopstate = () => history.forward();
+
 let url = window.location.href
 let base_path = window.location.origin
 let urlSplitted = url.split('/')
@@ -43,26 +44,26 @@ if (jenis == 3) {
 }
 startTimer()
 
-getSoal(soal)
+getSoal(soal,setSoal)
 $('#btn-nav-prev').css('opacity',0)
 $('#btn-nav-prev').css('cursor','default')
 
 $('.nav-soal-item').each(function (i){
     $(this).on('click', function(){
         soal= $(this).val()
-        getSoal(soal)
+        getSoal(soal,setSoal)
     })
 })
 $('#btn-nav-prev').on('click', ()=>{
     if (soal>1) {
         soal--
-        getSoal(soal)
+        getSoal(soal,setSoal)
     }
 })
 $('#btn-nav-next').on('click', ()=>{
     if (soal<jumlahSoal) {
         soal++
-        getSoal(soal)
+        getSoal(soal,setSoal)
     }
 })
 
@@ -111,8 +112,8 @@ $('#selesaiBtn').on('click', ()=>{
 })
 
 // ---- FUNCTION -----
-function getSoal(soal) {
-    $.get("/get-soal?jenis="+jenis+'&no='+soal,
+function getSoal(soal,set) {
+    $.get("/get-soal?jenis="+jenis+'&no='+soal+'&set='+set,
         function (data) {
             $('#soal-content').html(data)
             $('#noSoal').html(soal)
@@ -187,7 +188,7 @@ function startTimer(){
         if (timer > 0) {
             timer--;
             if (timer == 0) {
-                // selesaiAnswer(userAnswer)
+                // submitAnswer(userAnswer)
             }
         }
         
@@ -316,6 +317,7 @@ function submitAnswer(userAnswer){
             data: {
                 userAnswer: userAnswer,
                 jenisKuis: jenis,
+                setSoal: setSoal,
                 _token: token,
                 waktuPengerjaan: timer
             },

@@ -14,52 +14,150 @@ class KuisController extends Controller
             'jumlahSoal' => 6,
             'waktu' => 30,
             'keyAnswer' => [
-                'soal1_1' => '1,2,5,6,7',
-
-                'soal2_1' => '',
-                'soal2_2' => '',
-                'soal2_3' => '4',
-                'soal2_4' => '',
-                'soal2_5' => ['15.000', '15000'],
-                'soal2_6' => '7',
-                'soal2_7' => '2',
-                'soal2_8' => ['17500', '17.500'],
-
-                'soal3_1' => '',
-                'soal3_2' => '',
-                'soal3_3' => '2',
-                'soal3_4' => '2',
-                'soal3_5' => ['26.000', '26000'],
-                'soal3_6' => '3',
-                'soal3_7' => '',
-                'soal3_8' => ['23000', '23.000'],
-
-                'soal4_1' => '',
-                'soal4_2' => '',
-                'soal4_3' => '',
-                'soal4_4' => '3',
-                'soal4_5' => ['102.000', '102000'],
-                'soal4_6' => '2',
-                'soal4_7' => '',
-                'soal4_8' => ['79000', '79.000'],
-
-                'soal5_1' => '',
-                'soal5_2' => '',
-                'soal5_3' => '3',
-                'soal5_4' => '2',
-                'soal5_5' => ['130.000', '130000'],
-                'soal5_6' => '2',
-                'soal5_7' => '',
-                'soal5_8' => ['80000', '80.000'],
-
-                'soal6_1' => '',
-                'soal6_2' => '',
-                'soal6_3' => '3',
-                'soal6_4' => '',
-                'soal6_5' => ['700.000', '700000'],
-                'soal6_6' => '2',
-                'soal6_7' => '2',
-                'soal6_8' => ['600000', '600.000'],
+                '1' => [
+                    'soal1_1' => '1,2,5,6,7',
+    
+                    'soal2_1' => '',
+                    'soal2_2' => '',
+                    'soal2_3' => '4',
+                    'soal2_4' => '',
+                    'soal2_5' => ['15.000', '15000'],
+                    'soal2_6' => '7',
+                    'soal2_7' => '2',
+                    'soal2_8' => ['17500', '17.500'],
+    
+                    'soal3_1' => '',
+                    'soal3_2' => '',
+                    'soal3_3' => '2',
+                    'soal3_4' => '2',
+                    'soal3_5' => ['26.000', '26000'],
+                    'soal3_6' => '3',
+                    'soal3_7' => '',
+                    'soal3_8' => ['23000', '23.000'],
+    
+                    'soal4_1' => '',
+                    'soal4_2' => '',
+                    'soal4_3' => '',
+                    'soal4_4' => '3',
+                    'soal4_5' => ['102.000', '102000'],
+                    'soal4_6' => '2',
+                    'soal4_7' => '',
+                    'soal4_8' => ['79000', '79.000'],
+    
+                    'soal5_1' => '',
+                    'soal5_2' => '',
+                    'soal5_3' => '3',
+                    'soal5_4' => '2',
+                    'soal5_5' => ['130.000', '130000'],
+                    'soal5_6' => '2',
+                    'soal5_7' => '',
+                    'soal5_8' => ['80000', '80.000'],
+    
+                    'soal6_1' => '',
+                    'soal6_2' => '',
+                    'soal6_3' => '3',
+                    'soal6_4' => '',
+                    'soal6_5' => ['700.000', '700000'],
+                    'soal6_6' => '2',
+                    'soal6_7' => '2',
+                    'soal6_8' => ['600000', '600.000'],
+                ],
+                '2' => [
+                    'soal1_1' => '2,5,6,7',
+    
+                    'soal2_1' => '',
+                    'soal2_2' => '',
+                    'soal2_3' => '5',
+                    'soal2_4' => '',
+                    'soal2_5' => ['25.000', '25000'],
+                    'soal2_6' => '4',
+                    'soal2_7' => '2',
+                    'soal2_8' => ['38000', '38.000'],
+    
+                    'soal3_1' => '',
+                    'soal3_2' => '',
+                    'soal3_3' => '4',
+                    'soal3_4' => '',
+                    'soal3_5' => ['65.000', '65000'],
+                    'soal3_6' => '2',
+                    'soal3_7' => '2',
+                    'soal3_8' => ['70000', '70.000'],
+    
+                    'soal4_1' => '',
+                    'soal4_2' => '',
+                    'soal4_3' => '3',
+                    'soal4_4' => '3',
+                    'soal4_5' => ['420.000', '420000'],
+                    'soal4_6' => '',
+                    'soal4_7' => '',
+                    'soal4_8' => ['140000', '140.000'],
+    
+                    'soal5_1' => '',
+                    'soal5_2' => '',
+                    'soal5_3' => '2',
+                    'soal5_4' => '6',
+                    'soal5_5' => ['320.000', '320000'],
+                    'soal5_6' => '5',
+                    'soal5_7' => '',
+                    'soal5_8' => ['100000', '100.000'],
+    
+                    'soal6_1' => '',
+                    'soal6_2' => '',
+                    'soal6_3' => '2',
+                    'soal6_4' => '',
+                    'soal6_5' => ['40.000', '40000'],
+                    'soal6_6' => '2',
+                    'soal6_7' => '2',
+                    'soal6_8' => ['65000', '65.000'],
+                ],
+                '3' => [
+                    'soal1_1' => '1,3,5,8',
+    
+                    'soal2_1' => '',
+                    'soal2_2' => '',
+                    'soal2_3' => '6',
+                    'soal2_4' => '2',
+                    'soal2_5' => ['50.000', '50000'],
+                    'soal2_6' => '3',
+                    'soal2_7' => '',
+                    'soal2_8' => ['25000', '25.000'],
+    
+                    'soal3_1' => '',
+                    'soal3_2' => '',
+                    'soal3_3' => '3',
+                    'soal3_4' => '3',
+                    'soal3_5' => ['117.000', '117000'],
+                    'soal3_6' => '2',
+                    'soal3_7' => '',
+                    'soal3_8' => ['73000', '73.000'],
+    
+                    'soal4_1' => '',
+                    'soal4_2' => '',
+                    'soal4_3' => '2',
+                    'soal4_4' => '2',
+                    'soal4_5' => ['30.000', '30000'],
+                    'soal4_6' => '3',
+                    'soal4_7' => '5',
+                    'soal4_8' => ['450000', '450.000'],
+    
+                    'soal5_1' => '',
+                    'soal5_2' => '',
+                    'soal5_3' => '2',
+                    'soal5_4' => '-',
+                    'soal5_5' => ['150.000', '150000'],
+                    'soal5_6' => '',
+                    'soal5_7' => '',
+                    'soal5_8' => ['7150000', '7.150.000'],
+    
+                    'soal6_1' => '',
+                    'soal6_2' => '',
+                    'soal6_3' => '',
+                    'soal6_4' => '-2',
+                    'soal6_5' => ['0', '0'],
+                    'soal6_6' => '2',
+                    'soal6_7' => '-',
+                    'soal6_8' => ['45', '45'],
+                ]
             ]
         ],
         2 => [
@@ -129,6 +227,9 @@ class KuisController extends Controller
         // dd(request()->route('jenis'));
         $data['jenis'] = $jenis;
         $data['title'] = $this->dataKuis[$jenis]['kuis'];
+        if ($jenis < 3) {
+            $data['setSoal'] = rand(1,3);
+        }
         $data['jumlahSoal'] = $this->dataKuis[$jenis]['jumlahSoal'];
         $data['waktuPengerjaan'] = $this->dataKuis[$jenis]['waktu'];
         return view('siswa.kuis', $data);
@@ -138,6 +239,11 @@ class KuisController extends Controller
     {
         $jenis = $request->query('jenis');
         $no = $request->query('no');
+        $set = $request->query('set');
+
+        if ($set != '') {
+            return view('kuis.' . $jenis . '-' . $no . '_' . $set);
+        }
 
         return view('kuis.' . $jenis . '-' . $no);
     }
@@ -148,6 +254,7 @@ class KuisController extends Controller
         $userAnswer = $request->userAnswer;
         $jenisKuis = $request->jenisKuis;
         $keyAnswer = $this->dataKuis[$jenisKuis]['keyAnswer'];
+        $setSoal = $request->setSoal;
 
         $keys = array_keys($userAnswer);
         $benar = 0;
@@ -158,25 +265,39 @@ class KuisController extends Controller
                     isset($userAnswer['soal' . $i . '_1']) && $userAnswer['soal' . $i . '_1'] != null &&
                     isset($userAnswer['soal' . $i . '_2']) && $userAnswer['soal' . $i . '_2'] != null
                 ) {
-                    $keyAnswer['soal' . $i . '_1'] = $userAnswer['soal' . $i . '_1'];
-                    $keyAnswer['soal' . $i . '_2'] = $userAnswer['soal' . $i . '_2'];
+                    $keyAnswer[$setSoal]['soal' . $i . '_1'] = $userAnswer['soal' . $i . '_1'];
+                    $keyAnswer[$setSoal]['soal' . $i . '_2'] = $userAnswer['soal' . $i . '_2'];
 
-                    $keyAnswer['soal' . $i . '_3'] = $keyAnswer['soal' . $i . '_3'] . $userAnswer['soal' . $i . '_1'];
-                    $keyAnswer['soal' . $i . '_4'] = $keyAnswer['soal' . $i . '_4'] . $userAnswer['soal' . $i . '_2'];
+                    $keyAnswer[$setSoal]['soal' . $i . '_3'] = $keyAnswer[$setSoal]['soal' . $i . '_3'] . $userAnswer['soal' . $i . '_1'];
+                    $keyAnswer[$setSoal]['soal' . $i . '_4'] = $keyAnswer[$setSoal]['soal' . $i . '_4'] . $userAnswer['soal' . $i . '_2'];
 
-                    $keyAnswer['soal' . $i . '_6'] = $keyAnswer['soal' . $i . '_6'] . $userAnswer['soal' . $i . '_1'];
-                    $keyAnswer['soal' . $i . '_7'] = $keyAnswer['soal' . $i . '_7'] . $userAnswer['soal' . $i . '_2'];
+                    $keyAnswer[$setSoal]['soal' . $i . '_6'] = $keyAnswer[$setSoal]['soal' . $i . '_6'] . $userAnswer['soal' . $i . '_1'];
+                    $keyAnswer[$setSoal]['soal' . $i . '_7'] = $keyAnswer[$setSoal]['soal' . $i . '_7'] . $userAnswer['soal' . $i . '_2'];
                 }
             }
         }
 
         if ($request->jenisKuis == '2') {
-            $xy = [
-                [4, 5, 28, 2, -3, -8, 2, 4],
-                [6, -3, 15, 4, 1, 7, 2, -1],
-                [3, 2, 8, 2, 3, 12, 0, 4],
-                [3, 4, -7, 2, 1, -3, -1, -1],
-            ];
+            if ($setSoal == '1') {
+                // Keyanswer 1-4
+                $xy = [
+                    [4, 5, 28, 2, -3, -8, 2, 4],
+                    [6, -3, 15, 4, 1, 7, 2, -1],
+                    [3, 2, 8, 2, 3, 12, 0, 4],
+                    [3, 4, -7, 2, 1, -3, -1, -1],
+                ];
+                // Keyanswer 6-8
+                $xy_68= [
+                    [7, -4, 19, 5, 2, 33, 5, 4],
+                    [4, 6, 26, 2, 4, 16, 2, 3],
+                    [8, -3, -7, 4, 2, 14, 1, 5]
+                ];
+                // Keyanswer 9-10
+                $xy_910= [
+                    [7,3,-55,0,5,-2,0,2,4,9],
+                    [11,3,-53,0,2,-5,7,0,4,3]
+                ];
+            }
 
             // Set default answer (-)
             for ($i = 1; $i <= 10; $i++) {
@@ -331,12 +452,7 @@ class KuisController extends Controller
             $keyAnswer['soal5_20'] = 0;
             $keyAnswer['soal5_21'] = -2;
 
-            // Set keyanswer 6-8
-            $xy_68= [
-                [7,-4,19,5,2,33,5,4],
-                [4,6,26,2,4,16,2,3],
-                [8,-3,-7,4,2,14,1,5]
-            ];
+            // Set Key Answer 6-8
             for ($i=6; $i <= 8; $i++) { 
                 $keyAnswer['soal'.$i.'_1'] = $userAnswer['soal'.$i.'_1'];
                 $keyAnswer['soal'.$i.'_2'] = $userAnswer['soal'.$i.'_2'];
@@ -631,12 +747,8 @@ class KuisController extends Controller
                 $keyAnswer['soal'.$i.'_25'] = $xy_68[$i-6][7];
             }
 
-            // Set keyanswer 9-10
-            $xy_910= [
-                [7,3,-55,0,5,-2,0,2,4,9],
-                [11,3,-53,0,2,-5,7,0,4,3]
-            ];
-
+            
+            // Set Keyanswer 9-10
             for ($i=9; $i <= 10; $i++) { 
                 $keyAnswer['soal'.$i.'_1'] = $userAnswer['soal'.$i.'_1'];
                 $keyAnswer['soal'.$i.'_2'] = $userAnswer['soal'.$i.'_2'];
@@ -1341,15 +1453,29 @@ class KuisController extends Controller
 
         }
 
+        // Loop Check Answer
         foreach ($keys as $key) {
-            if (is_array($keyAnswer[$key])) {
-                if (in_array($userAnswer[$key], $keyAnswer[$key])) {
-                    $benar++;
+            if ($jenisKuis==1) {
+                if (is_array($keyAnswer[$setSoal][$key])) {
+                    if (in_array($userAnswer[$key], $keyAnswer[$key])) {
+                        $benar++;
+                    }
+                } else {
+                    if ($userAnswer[$key] == $keyAnswer[$setSoal][$key]) {
+                        $benar++;
+                    }
                 }
-            } else {
-                if ($userAnswer[$key] == $keyAnswer[$key]) {
-                    $benar++;
+            }else{
+                if (is_array($keyAnswer[$key])) {
+                    if (in_array($userAnswer[$key], $keyAnswer[$key])) {
+                        $benar++;
+                    }
+                } else {
+                    if ($userAnswer[$key] == $keyAnswer[$key]) {
+                        $benar++;
+                    }
                 }
+
             }
         }
 

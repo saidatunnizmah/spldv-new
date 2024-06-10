@@ -31,7 +31,7 @@ Pada persamaan di bawah ini, manakah yang merupakan persamaan linear dua variabe
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="soal1_1" value="5" id="check-5">
                 <label class="form-check-label" for="check-5">
-                    \( x + 2x + y - 17 \)
+                    \( x + 2x + y = 17 \)
                 </label>
             </div>
             <div class="form-check">

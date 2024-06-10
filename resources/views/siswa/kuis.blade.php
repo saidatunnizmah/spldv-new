@@ -65,6 +65,13 @@
 @endsection
 
 @section('js-Addon')
+<script>
+    let token = '{{ csrf_token() }}';
+    // let setSoal = '{{ isset($setSoal) ? $setSoal : '' }}';
+    let setSoal = 1;
+    let jumlahSoal = {{ $jumlahSoal }};
+    let timer = {{ $waktuPengerjaan }}*60;
+</script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script type="module">
@@ -76,9 +83,4 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{ asset('js/kuis/kuis.js') }}"></script>
-<script>
-    let token = '{{ csrf_token() }}' 
-    let jumlahSoal = {{ $jumlahSoal }}
-    let timer = {{ $waktuPengerjaan }}*60
-</script>
 @endsection
