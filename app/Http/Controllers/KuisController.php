@@ -548,6 +548,35 @@ class KuisController extends Controller
                                 $keyAnswer['soal'.$i.'_13'] = '4';
                                 $keyAnswer['soal'.$i.'_14'] = '28';
                             }
+                        }elseif ($setSoal == '3') {
+                            if ($i==6) {
+                                $keyAnswer['soal'.$i.'_3'] = 'x';
+                                $keyAnswer['soal'.$i.'_4'] = 'y';
+                                $keyAnswer['soal'.$i.'_6'] = '7-y';
+                                $keyAnswer['soal'.$i.'_7'] = '2\\left(7-y\\right)-y';
+                                $keyAnswer['soal'.$i.'_9'] = '14-2y-y';
+                                $keyAnswer['soal'.$i.'_11'] = '14-3y';
+                                $keyAnswer['soal'.$i.'_13'] = '-3';
+                                $keyAnswer['soal'.$i.'_14'] = '-15';
+                            }elseif ($i==7) {
+                                $keyAnswer['soal'.$i.'_3'] = '2x';
+                                $keyAnswer['soal'.$i.'_4'] = 'y';
+                                $keyAnswer['soal'.$i.'_6'] = '\\frac{6-y}{2}';
+                                $keyAnswer['soal'.$i.'_7'] = '3\\left(\\frac{6-y}{2}\\right)-y';
+                                $keyAnswer['soal'.$i.'_9'] = '\\frac{18-3y}{2}-y';
+                                $keyAnswer['soal'.$i.'_11'] = '\\frac{18-5y}{2}';
+                                $keyAnswer['soal'.$i.'_13'] = '-5';
+                                $keyAnswer['soal'.$i.'_14'] = '-20';
+                            }elseif ($i==8) {
+                                $keyAnswer['soal'.$i.'_3'] = 'x';
+                                $keyAnswer['soal'.$i.'_4'] = '-y';
+                                $keyAnswer['soal'.$i.'_6'] = '-5+y';
+                                $keyAnswer['soal'.$i.'_7'] = '3\\left(-5+y\\right)+y';
+                                $keyAnswer['soal'.$i.'_9'] = '-15+3y+y';
+                                $keyAnswer['soal'.$i.'_11'] = '4y-15';
+                                $keyAnswer['soal'.$i.'_13'] = '4';
+                                $keyAnswer['soal'.$i.'_14'] = '28';
+                            }
                         }
                         
                         $keyAnswer['soal'.$i.'_8'] = $xy_68[$i-6][5];
@@ -656,6 +685,36 @@ class KuisController extends Controller
                                 $keyAnswer['soal'.$i.'_14'] = '-28';
                             }
                         }elseif ($setSoal=='2') {
+                            if ($i==6) {
+                                $keyAnswer['soal'.$i.'_3'] = 'x';
+                                $keyAnswer['soal'.$i.'_4'] = 'y';
+                                $keyAnswer['soal'.$i.'_6'] = '7-x';
+                                $keyAnswer['soal'.$i.'_7'] = '2x-\\left(7-x\\right)';
+                                $keyAnswer['soal'.$i.'_9'] = '2x-7+x';
+                                $keyAnswer['soal'.$i.'_11'] = '3x-7';
+                                $keyAnswer['soal'.$i.'_13'] = '3';
+                                $keyAnswer['soal'.$i.'_14'] = '6';
+                            }elseif ($i==7) {
+                                $keyAnswer['soal'.$i.'_3'] = '2x';
+                                $keyAnswer['soal'.$i.'_4'] = 'y';
+                                $keyAnswer['soal'.$i.'_6'] = '6-2x';
+                                $keyAnswer['soal'.$i.'_7'] = '3x-\\left(6-2x\\right)';
+                                $keyAnswer['soal'.$i.'_9'] = '3x-6+2x';
+                                $keyAnswer['soal'.$i.'_11'] = '5x-6';
+                                $keyAnswer['soal'.$i.'_13'] = '5';
+                                $keyAnswer['soal'.$i.'_14'] = '5';
+                            }elseif ($i==8) {
+                                $keyAnswer['soal'.$i.'_3'] = 'x';
+                                $keyAnswer['soal'.$i.'_4'] = '-y';
+                                $keyAnswer['soal'.$i.'_6'] = '5+x';
+                                $keyAnswer['soal'.$i.'_7'] = '3x+\\left(5+x\\right)';
+                                $keyAnswer['soal'.$i.'_9'] = '3x+5+x';
+                                $keyAnswer['soal'.$i.'_11'] = '4x+5';
+                                $keyAnswer['soal'.$i.'_13'] = '4';
+                                $keyAnswer['soal'.$i.'_14'] = '8';
+                            }
+                            
+                        }elseif ($setSoal=='3') {
                             if ($i==6) {
                                 $keyAnswer['soal'.$i.'_3'] = 'x';
                                 $keyAnswer['soal'.$i.'_4'] = 'y';
@@ -824,6 +883,35 @@ class KuisController extends Controller
                                 $keyAnswer['soal'.$i.'_13'] = '-4';
                                 $keyAnswer['soal'.$i.'_14'] = '-28';
                             }
+                        }elseif ($setSoal=='3') {
+                            if ($i==6) {
+                                $keyAnswer['soal'.$i.'_3'] = '2x';
+                                $keyAnswer['soal'.$i.'_4'] = '-y';
+                                $keyAnswer['soal'.$i.'_6'] = '\\frac{-1+y}{2}';
+                                $keyAnswer['soal'.$i.'_7'] = '\\left(\\frac{-1+y}{2}\\right)+y';
+                                $keyAnswer['soal'.$i.'_9'] = '\\frac{-1+y}{2}+y';
+                                $keyAnswer['soal'.$i.'_11'] = '\\frac{3y-1}{2}';
+                                $keyAnswer['soal'.$i.'_13'] = '3';
+                                $keyAnswer['soal'.$i.'_14'] = '15';
+                            }elseif ($i==7) {
+                                $keyAnswer['soal'.$i.'_3'] = '3x';
+                                $keyAnswer['soal'.$i.'_4'] = '-y';
+                                $keyAnswer['soal'.$i.'_6'] = '\\frac{-1+y}{3}';
+                                $keyAnswer['soal'.$i.'_7'] = '2\\left(\\frac{-1+y}{3}\\right)+y';
+                                $keyAnswer['soal'.$i.'_9'] = '\\frac{-2+2y}{3}+y';
+                                $keyAnswer['soal'.$i.'_11'] = '\\frac{5y-2}{3}';
+                                $keyAnswer['soal'.$i.'_13'] = '5';
+                                $keyAnswer['soal'.$i.'_14'] = '20';
+                            }elseif ($i==8) {
+                                $keyAnswer['soal'.$i.'_3'] = '3x';
+                                $keyAnswer['soal'.$i.'_4'] = 'y';
+                                $keyAnswer['soal'.$i.'_6'] = '\\frac{13-y}{3}';
+                                $keyAnswer['soal'.$i.'_7'] = '\\left(\\frac{13-y}{3}\\right)-y';
+                                $keyAnswer['soal'.$i.'_9'] = '\\frac{13-y}{3}-y';
+                                $keyAnswer['soal'.$i.'_11'] = '\\frac{13-4y}{3}';
+                                $keyAnswer['soal'.$i.'_13'] = '-4';
+                                $keyAnswer['soal'.$i.'_14'] = '-28';
+                            }
                         }
                         
                         $keyAnswer['soal'.$i.'_10'] = $xy_68[$i-6][2];
@@ -958,6 +1046,36 @@ class KuisController extends Controller
                                 $keyAnswer['soal'.$i.'_14'] = '8';
                             }
                             
+                        } elseif ($setSoal == '3') {
+                            if ($i==6) {
+                                $keyAnswer['soal'.$i.'_3'] = '2x';
+                                $keyAnswer['soal'.$i.'_4'] = '-y';
+                                $keyAnswer['soal'.$i.'_6'] = '1+2x';
+                                $keyAnswer['soal'.$i.'_7'] = 'x+\\left(1+2x\\right)';
+                                $keyAnswer['soal'.$i.'_9'] = 'x+1+2x';
+                                $keyAnswer['soal'.$i.'_11'] = '3x+1';
+                                $keyAnswer['soal'.$i.'_13'] = '3';
+                                $keyAnswer['soal'.$i.'_14'] = '6';
+                            }elseif ($i==7) {
+                                $keyAnswer['soal'.$i.'_3'] = '3x';
+                                $keyAnswer['soal'.$i.'_4'] = '-y';
+                                $keyAnswer['soal'.$i.'_6'] = '1+3x';
+                                $keyAnswer['soal'.$i.'_7'] = '2x+\\left(1+3x\\right)';
+                                $keyAnswer['soal'.$i.'_9'] = '2x+1+3x';
+                                $keyAnswer['soal'.$i.'_11'] = '5x+1';
+                                $keyAnswer['soal'.$i.'_13'] = '5';
+                                $keyAnswer['soal'.$i.'_14'] = '5';
+                            }elseif ($i==8) {
+                                $keyAnswer['soal'.$i.'_3'] = '3x';
+                                $keyAnswer['soal'.$i.'_4'] = 'y';
+                                $keyAnswer['soal'.$i.'_6'] = '13-3x';
+                                $keyAnswer['soal'.$i.'_7'] = 'x-\\left(13-3x\\right)';
+                                $keyAnswer['soal'.$i.'_9'] = 'x-13+3x';
+                                $keyAnswer['soal'.$i.'_11'] = '4x-13';
+                                $keyAnswer['soal'.$i.'_13'] = '4';
+                                $keyAnswer['soal'.$i.'_14'] = '8';
+                            }
+                            
                         }
                         
                         $keyAnswer['soal'.$i.'_10'] = $xy_68[$i-6][2];
@@ -1040,6 +1158,7 @@ class KuisController extends Controller
                 $keyAnswer['soal'.$i.'_2'] = $userAnswer['soal'.$i.'_2'];
                 $keyAnswer['soal'.$i.'_15'] = $userAnswer['soal'.$i.'_16'];
 
+                // Pers. 1
                 if ($userAnswer['soal'.$i.'_1']=='1') {
                     $y1 = $xy_910[$i-9][1]>0 ? '+'.$xy_910[$i-9][1] : $xy_910[$i-9][1];
                     $y2 = $xy_910[$i-9][5]>0 ? '+'.$xy_910[$i-9][5] : $xy_910[$i-9][5];
@@ -1059,20 +1178,53 @@ class KuisController extends Controller
                     $keyAnswer['soal'.$i.'_3'] = $xy_910[$i-9][0].'x'.$y1.'y'.$z1;
                     $keyAnswer['soal'.$i.'_4'] = $xy_910[$i-9][3];
 
+                    // Pers.1 Var. x
                     if ($userAnswer['soal'.$i.'_2']=='x') {
-                        if ($i == 9) {
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{55-3y}{7}';
-                            $keyAnswer['soal'.$i.'_8'] = '\\frac{275-15y}{7}-2y';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{275-29y}{7}';
-                            $keyAnswer['soal'.$i.'_12'] = '-29';
-                            $keyAnswer['soal'.$i.'_13'] = '-29';
-                        }else{
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{53-3y}{11}';
-                            $keyAnswer['soal'.$i.'_8'] = '\\frac{106-6y}{11}-5y+7';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{183-61y}{11}';
-                            $keyAnswer['soal'.$i.'_12'] = '-61';
-                            $keyAnswer['soal'.$i.'_13'] = '-183';
+                        if ($setSoal=='1') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{55-3y}{7}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{275-15y}{7}-2y';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{275-29y}{7}';
+                                $keyAnswer['soal'.$i.'_12'] = '-29';
+                                $keyAnswer['soal'.$i.'_13'] = '-29';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{53-3y}{11}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{106-6y}{11}-5y+7';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{183-61y}{11}';
+                                $keyAnswer['soal'.$i.'_12'] = '-61';
+                                $keyAnswer['soal'.$i.'_13'] = '-183';
+                            }
+                        }elseif ($i == '2') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{44-4y}{4}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{308-28y}{4}-2y';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{308-36y}{4}';
+                                $keyAnswer['soal'.$i.'_12'] = '-36';
+                                $keyAnswer['soal'.$i.'_13'] = '-216';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{-7+5y}{6}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{-7+5y}{6}+2y-13';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{17y-85}{6}';
+                                $keyAnswer['soal'.$i.'_12'] = '17';
+                                $keyAnswer['soal'.$i.'_13'] = '85';
+                            }
+                        }elseif ($i == '3') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{44-4y}{4}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{308-28y}{4}-2y';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{308-36y}{4}';
+                                $keyAnswer['soal'.$i.'_12'] = '-36';
+                                $keyAnswer['soal'.$i.'_13'] = '-216';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{-7+5y}{6}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{-7+5y}{6}+2y-13';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{17y-85}{6}';
+                                $keyAnswer['soal'.$i.'_12'] = '17';
+                                $keyAnswer['soal'.$i.'_13'] = '85';
+                            }
                         }
+                        
+                        
                         
                         $keyAnswer['soal'.$i.'_6'] = $xy_910[$i-9][4].'\\left('.$keyAnswer['soal'.$i.'_5'].'\\right)'.$y2.'y'.$z2;
                         $keyAnswer['soal'.$i.'_7'] = $xy_910[$i-9][7];
@@ -1105,19 +1257,49 @@ class KuisController extends Controller
 
                             $keyAnswer['soal'.$i.'_22'] = $xy_910[$i-9][8];
                         }
-                    }else{
-                        if ($i == 9) {
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{55-3y}{7}';
-                            $keyAnswer['soal'.$i.'_8'] = '\\frac{275-15y}{7}-2y';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{275-29y}{7}';
-                            $keyAnswer['soal'.$i.'_12'] = '29';
-                            $keyAnswer['soal'.$i.'_13'] = '116';
-                        }else{
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{53-11x}{3}';
-                            $keyAnswer['soal'.$i.'_8'] = '2x-\\frac{265+55x}{3}+7';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{61x-244}{3}';
-                            $keyAnswer['soal'.$i.'_12'] = '61';
-                            $keyAnswer['soal'.$i.'_13'] = '244';
+                    }else{ //Pers.1 Var. y
+                        if ($setSoal =='1') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{55-3y}{7}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{275-15y}{7}-2y';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{275-29y}{7}';
+                                $keyAnswer['soal'.$i.'_12'] = '29';
+                                $keyAnswer['soal'.$i.'_13'] = '116';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{53-11x}{3}';
+                                $keyAnswer['soal'.$i.'_8'] = '2x-\\frac{265+55x}{3}+7';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{61x-244}{3}';
+                                $keyAnswer['soal'.$i.'_12'] = '61';
+                                $keyAnswer['soal'.$i.'_13'] = '244';
+                            }
+                        }elseif ($setSoal == '2') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{44-4x}{4';
+                                $keyAnswer['soal'.$i.'_8'] = '7x-\\frac{88+8x}{4}';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{36x-88}{4}';
+                                $keyAnswer['soal'.$i.'_12'] = '36';
+                                $keyAnswer['soal'.$i.'_13'] = '180';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{-7-6x}{-5}';
+                                $keyAnswer['soal'.$i.'_8'] = 'x-\\frac{14-12x}{-5}-13';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{-17x+51}{-5}';
+                                $keyAnswer['soal'.$i.'_12'] = '-17';
+                                $keyAnswer['soal'.$i.'_13'] = '-51';
+                            }
+                        }elseif ($setSoal == '3') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{44-4x}{4';
+                                $keyAnswer['soal'.$i.'_8'] = '7x-\\frac{88+8x}{4}';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{36x-88}{4}';
+                                $keyAnswer['soal'.$i.'_12'] = '36';
+                                $keyAnswer['soal'.$i.'_13'] = '180';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{-7-6x}{-5}';
+                                $keyAnswer['soal'.$i.'_8'] = 'x-\\frac{14-12x}{-5}-13';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{-17x+51}{-5}';
+                                $keyAnswer['soal'.$i.'_12'] = '-17';
+                                $keyAnswer['soal'.$i.'_13'] = '-51';
+                            }
                         }
                         
                         $keyAnswer['soal'.$i.'_6'] = $xy_910[$i-9][4].'x'.$y2.'\\left('.$keyAnswer['soal'.$i.'_5'].'\\right)'.$z2;
@@ -1152,7 +1334,7 @@ class KuisController extends Controller
                             $keyAnswer['soal'.$i.'_22'] = $xy_910[$i-9][8];
                         }
                     }
-                }else{
+                }else{ // Pers. 2
                     $y1 = $xy_910[$i-9][1]>0 ? '+'.$xy_910[$i-9][1] : $xy_910[$i-9][1];
                     $y2 = $xy_910[$i-9][5]>0 ? '+'.$xy_910[$i-9][5] : $xy_910[$i-9][5];
 
@@ -1171,19 +1353,50 @@ class KuisController extends Controller
                     $keyAnswer['soal'.$i.'_3'] = $xy_910[$i-9][4].'x'.$y2.'y'.$z2;
                     $keyAnswer['soal'.$i.'_4'] = $xy_910[$i-9][7];
 
+                    // Pers.2 Var. x
                     if ($userAnswer['soal'.$i.'_2']=='x') {
-                        if ($i == 9) {
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{2+2y}{5}';
-                            $keyAnswer['soal'.$i.'_8'] = '\\frac{14y+14}{5}+3y-55';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{29y-261}{5}';
-                            $keyAnswer['soal'.$i.'_12'] = '29';
-                            $keyAnswer['soal'.$i.'_13'] = '261';
-                        }else{
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{-7+5y}{2}';
-                            $keyAnswer['soal'.$i.'_8'] = '\\frac{-77+55y}{2}+3y-53';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{61y-183}{2}';
-                            $keyAnswer['soal'.$i.'_12'] = '61';
-                            $keyAnswer['soal'.$i.'_13'] = '183';
+                        if ($setSoal == '1') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{2+2y}{5}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{14y+14}{5}+3y-55';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{29y-261}{5}';
+                                $keyAnswer['soal'.$i.'_12'] = '29';
+                                $keyAnswer['soal'.$i.'_13'] = '261';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{-7+5y}{2}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{-77+55y}{2}+3y-53';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{61y-183}{2}';
+                                $keyAnswer['soal'.$i.'_12'] = '61';
+                                $keyAnswer['soal'.$i.'_13'] = '183';
+                            }
+                        }elseif ($setSoal=='2') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{23+2y}{7}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{92+8y}{7}+4y-44';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{36y-216}{7}';
+                                $keyAnswer['soal'.$i.'_12'] = '36';
+                                $keyAnswer['soal'.$i.'_13'] = '216';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '13-2y';
+                                $keyAnswer['soal'.$i.'_8'] = '78-12y-5y+7';
+                                $keyAnswer['soal'.$i.'_10'] = '85-17y';
+                                $keyAnswer['soal'.$i.'_12'] = '-17';
+                                $keyAnswer['soal'.$i.'_13'] = '-85';
+                            }
+                        }elseif ($setSoal=='3') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{23+2y}{7}';
+                                $keyAnswer['soal'.$i.'_8'] = '\\frac{92+8y}{7}+4y-44';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{36y-216}{7}';
+                                $keyAnswer['soal'.$i.'_12'] = '36';
+                                $keyAnswer['soal'.$i.'_13'] = '216';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '13-2y';
+                                $keyAnswer['soal'.$i.'_8'] = '78-12y-5y+7';
+                                $keyAnswer['soal'.$i.'_10'] = '85-17y';
+                                $keyAnswer['soal'.$i.'_12'] = '-17';
+                                $keyAnswer['soal'.$i.'_13'] = '-85';
+                            }
                         }
                         
                         $keyAnswer['soal'.$i.'_6'] = $xy_910[$i-9][0].'\\left('.$keyAnswer['soal'.$i.'_5'].'\\right)'.$y1.'y'.$z1;
@@ -1217,19 +1430,49 @@ class KuisController extends Controller
 
                             $keyAnswer['soal'.$i.'_22'] = $xy_910[$i-9][8];
                         }
-                    }else{
-                        if ($i == 9) {
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{2-5x}{-2}';
-                            $keyAnswer['soal'.$i.'_8'] = '7x+\\frac{6-15x}{-2}-55';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{116-29x}{-2}';
-                            $keyAnswer['soal'.$i.'_12'] = '-29';
-                            $keyAnswer['soal'.$i.'_13'] = '-116';
-                        }else{
-                            $keyAnswer['soal'.$i.'_5'] = '\\frac{-7-2x}{-5}';
-                            $keyAnswer['soal'.$i.'_8'] = '11x-\\frac{21-6x}{-5}-53';
-                            $keyAnswer['soal'.$i.'_10'] = '\\frac{244-61x}{-5}';
-                            $keyAnswer['soal'.$i.'_12'] = '-61';
-                            $keyAnswer['soal'.$i.'_13'] = '244';
+                    }else{ //Pers. 2 Var. y
+                        if ($setSoal == '1') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{2-5x}{-2}';
+                                $keyAnswer['soal'.$i.'_8'] = '7x+\\frac{6-15x}{-2}-55';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{116-29x}{-2}';
+                                $keyAnswer['soal'.$i.'_12'] = '-29';
+                                $keyAnswer['soal'.$i.'_13'] = '-116';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{-7-2x}{-5}';
+                                $keyAnswer['soal'.$i.'_8'] = '11x-\\frac{21-6x}{-5}-53';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{244-61x}{-5}';
+                                $keyAnswer['soal'.$i.'_12'] = '-61';
+                                $keyAnswer['soal'.$i.'_13'] = '244';
+                            }
+                        } elseif ($setSoal == '2') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{23-7x}{-2}';
+                                $keyAnswer['soal'.$i.'_8'] = '4x+\\frac{92-28x}{-2}-44';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{-36x+180}{-2}';
+                                $keyAnswer['soal'.$i.'_12'] = '-36';
+                                $keyAnswer['soal'.$i.'_13'] = '-180';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{13-x}{2}';
+                                $keyAnswer['soal'.$i.'_8'] = '6x-\\frac{65+5x}{2}+7';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{17x-51}{2}';
+                                $keyAnswer['soal'.$i.'_12'] = '17';
+                                $keyAnswer['soal'.$i.'_13'] = '51';
+                            }
+                        } elseif ($setSoal == '3') {
+                            if ($i == 9) {
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{23-7x}{-2}';
+                                $keyAnswer['soal'.$i.'_8'] = '4x+\\frac{92-28x}{-2}-44';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{-36x+180}{-2}';
+                                $keyAnswer['soal'.$i.'_12'] = '-36';
+                                $keyAnswer['soal'.$i.'_13'] = '-180';
+                            }else{
+                                $keyAnswer['soal'.$i.'_5'] = '\\frac{13-x}{2}';
+                                $keyAnswer['soal'.$i.'_8'] = '6x-\\frac{65+5x}{2}+7';
+                                $keyAnswer['soal'.$i.'_10'] = '\\frac{17x-51}{2}';
+                                $keyAnswer['soal'.$i.'_12'] = '17';
+                                $keyAnswer['soal'.$i.'_13'] = '51';
+                            }
                         }
                         
                         $keyAnswer['soal'.$i.'_6'] = $xy_910[$i-9][0].'x'.$y1.'\\left('.$keyAnswer['soal'.$i.'_5'].'\\right)'.$z1;
