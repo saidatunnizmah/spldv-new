@@ -36,7 +36,7 @@ class MateriController extends Controller
         } elseif ($page == $countBabPage) {
             $data['btnSelanjutnya']['type'] = 'modal';
         }
-
+        
         $data['title'] = $this->materi[$bab][$page - 1];
         $data['materi'] = view('materi.' . $bab . '-' . $page);
         return view('siswa.materi', $data);
