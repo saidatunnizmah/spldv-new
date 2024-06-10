@@ -4,7 +4,7 @@ Tentukan penyelesaian sistem persamaan linear dua variabel di bawah ini dengan m
         \(4x+2y=14\)  <span class="ms-3">(1)</span>
     </li>
     <li>
-        \(4x-34y=16\) <span class="ms-3">(2)</span>
+        \(4x+4y=16\) <span class="ms-3">(2)</span>
     </li>
 </ul>
 

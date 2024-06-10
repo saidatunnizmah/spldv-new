@@ -68,7 +68,7 @@
 <script>
     let token = '{{ csrf_token() }}';
     // let setSoal = '{{ isset($setSoal) ? $setSoal : '' }}';
-    let setSoal = 1;
+    let setSoal = 2;
     let jumlahSoal = {{ $jumlahSoal }};
     let timer = {{ $waktuPengerjaan }}*60;
 </script>
