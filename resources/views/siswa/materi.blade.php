@@ -73,6 +73,19 @@
             <div class="modal-body" id="modalKuisBody">
                 Anda akan mengerjakan Kuis
             </div>
+            <div class="modal-body" id="modalKuisBody">
+            <div>
+                Berikut petunjuk pelaksanaannya :
+                <ul>
+                    <li>Pastikan perangkat yang digunakan terhubung ke internet dengan koneksi yang stabil.</li>
+                    <li>Siapkan alat tulis seperti kertas dan pena untuk coretan sementara jika diperlukan.</li>
+                    <li>Baca soal dengan teliti.</li>
+                    <li>Atur waktu dengan baik untuk memastikan semua soal terjawab sebelum waktu habis.</li>
+                    <li>Jangan keluar atau berpindah aplikasi selama kuis berlangsung.</li>
+                    <li>Setelah waktu habis, aplikasi akan otomatis menyimpan jawaban yang sudah diisi dan menutup akses ke soal.</li>
+                </ul>
+            </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                 <a href="" class="btn btn-primary" id="modalKuisBtn">Kerjakan Kuis</a>
