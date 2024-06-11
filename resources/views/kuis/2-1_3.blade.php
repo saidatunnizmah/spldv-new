@@ -5,7 +5,7 @@ Tentukan penyelesaian sistem persamaan linear dua variabel di bawah ini dengan m
         \(8x+8y=80\)  <span class="ms-3">(1)</span>
     </li>
     <li>
-        \(7x-9y=72\) <span class="ms-3">(2)</span>
+        \(7x+9y=72\) <span class="ms-3">(2)</span>
     </li>
 </ul>
 {{-- untuk membuat pilihan variabel dengan selection box --}}
