@@ -44,7 +44,7 @@
                 <div class="">
                     <h4 class="mb-0">Media Pembelajaran Interaktif</h4>
                     <h2 class="fw-bold">Sistem Persamaan Linear Dua Variabel</h2>
-                    <p>Selamat datang di aplikasi media pembelajaran interaktif kami yang didedikasikan untuk memudahkan pemahaman tentang sistem persamaan linear dua variabel. Kami menghadirkan pendekatan belajar yang menyenangkan dan udah dipahami melalui fitur-fitur interaktif, latihan soal yang disesuaikan, dan visualisasi yang memukau. </p>
+                    <p>Selamat datang di media pembelajaran interaktif kami yang didedikasikan untuk memudahkan pemahaman tentang sistem persamaan linear dua variabel kelas VIII SMP. Kami menghadirkan pendekatan belajar yang menyenangkan dan udah dipahami melalui fitur-fitur interaktif, latihan soal yang disesuaikan, dan visualisasi yang memukau. </p>
                     <div class="text-center">
                         <a href="{{ route('login') }}" class="btn btn-lg btn-color" style="width: 10em">Mulai Belajar</a>
                     </div>

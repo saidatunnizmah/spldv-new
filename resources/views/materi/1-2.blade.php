@@ -21,8 +21,8 @@
         <thead>
             <tr>
                 <th></th>
-                <th>Kasturi</th>
-                <th>Pakasam</th>
+                <th>Kasturi (Bungkus)</th>
+                <th>Pakasam (Bungkus)</th>
                 <th>Total Harga (Rp)</th>
             </tr>
         </thead>
@@ -66,7 +66,13 @@
     <button class="btn btn-success" id="cekJawaban1">Cek Jawaban</button>
 </div>
 
-2. Susunlah lingkaran berikut sehingga menjadi kalimat yang benar untuk menghitung total harga belanja!
+2. Susunlah lingkaran berikut sehingga menjadi kalimat yang benar untuk menghitung total harga belanja! <br>
+
+<b>Petunjuk :</b>
+<li>Klik lingakaran dengan kalimat yang disediakan.</li>
+<li>Drag dan letakkan pada lingkaran dengan angka yang sesuai.</li>
+<li>Untuk membatalkan, klik lingkaran yang sudah disusun.</li> 
+<br>
 <div id="drag-from-container" class="mt-2">
     <div class="draggable-item" draggable="true" ondragstart="drag(event)" id="item-1" style="background-color: #FEB941">
         Harga Kasturi
