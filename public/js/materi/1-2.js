@@ -36,11 +36,11 @@ let keyAnswer = {
 let keyDragDrop = {
     1 : 'Banyak Bungkus',
     2 : 'Dikali',
-    3 : 'Harga Kasturi',
+    3 : ['Harga Kasturi', 'Harga Pakasam'],
     4 : 'Ditambah',
     5 : 'Banyak Bungkus',
     6 : 'Dikali',
-    7 : 'Harga Pakasam',
+    7 : ['Harga Pakasam','Harga Kasturi'],
     8 : 'Sama Dengan',
     9 : 'Total Harga' 
 }
@@ -91,13 +91,23 @@ cekJawaban1.addEventListener('click',()=>{
 
 cekJawaban2.addEventListener('click',()=>{
     let benar = 1;
+    let jawabanSalah = []
     for (let i = 1; i <= 9; i++) {
-        if (userDragDrop[i] != keyDragDrop[i]) {
-            benar = 0
-            break;
+        if (Array.isArray(keyDragDrop[i])) {
+            if (!keyDragDrop[i].includes(userDragDrop[i])) {
+                benar = 0
+                jawabanSalah.push(i)
+            }
+        }else{
+            if (userDragDrop[i] != keyDragDrop[i]) {
+                benar = 0
+                jawabanSalah.push(i)
+            }
         }
     }
 
+    let feedback = document.querySelectorAll('#drag-to-container .feedback')
+    let draggableItem = document.querySelectorAll('.draggable-item')
     if (benar == 1) {
         Swal.fire({
             title: "Jawaban Anda Benar!",
@@ -105,10 +115,21 @@ cekJawaban2.addEventListener('click',()=>{
         });
         soalSelesai.push(2)
         cekJawaban2.setAttribute('disabled',true);
+
+        draggableItem.forEach(item => {
+            item.removeEventListener('click',backToDragFromContainer);
+        })
+        feedback.forEach(item => {
+            item.style.display = 'none'
+        })
     }else{
         Swal.fire({
             title: "Jawaban Anda Belum Tepat!",
             icon: "error"
+        });
+
+        jawabanSalah.forEach(index => {
+            feedback[index-1].style.display = 'block'
         });
     }
 })
@@ -148,6 +169,15 @@ cekJawaban3.addEventListener('click',()=>{
     cekJawabanIsianAlert(3,benar,salah)
 })
 
+btnSelanjutnya.addEventListener('click', () => {
+    if (soalSelesai.sort().join() != '1,2,3' || soalSelesai == []) {
+        Swal.fire({
+            title: "Anda Belum Dapat Berpindah ke Halaman Berikutnya",
+            icon: "error",
+            text: "Anda harus menjawab dengan benar semua soal!"
+        })
+    }
+})
 
 
 
@@ -179,6 +209,7 @@ function backToDragFromContainer(ev){
     var item = document.getElementById(ev.target.id)
     dragFromContainer.appendChild(item)
     item.setAttribute('draggable',true)
+    item.removeEventListener('click',backToDragFromContainer)
     document.getElementById(parentId).innerHTML = order;
     userDragDrop[order] = ''
 }
@@ -190,6 +221,13 @@ function cekJawabanIsianAlert(soal,totalBenar,totalSalah) {
             title: "Jawaban Anda Benar!",
             icon: "success"
         });
+        if (soal == 3) {
+            console.log('soal 3');
+            console.log($('#persamaanUtuhPalui'));
+            $('#persamaanUtuhPalui').removeClass('d-none')
+        }else{
+            console.log('bukan soal 3');
+        }
         soalSelesai.push(soal)
         document.getElementById('cekJawaban'+soal).setAttribute('disabled',true);
         cekSoalSelesai()
@@ -220,7 +258,8 @@ function cekSoalSelesai() {
             success: function(response){
                 if(response.status == 'updated'){
                     $('#lock-1-3').addClass('d-none');
-                    btnSelanjutnya.removeAttribute('disabled');
+                    btnSelanjutnya.setAttribute('data-bs-toggle','modal')
+                    btnSelanjutnya.setAttribute('data-bs-target','#kuisModal')
                 }
             },
             error: function(reject){
@@ -229,3 +268,4 @@ function cekSoalSelesai() {
         })
     }
 }
+// data-bs-toggle="modal" data-bs-target="#kuisModal"

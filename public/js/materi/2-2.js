@@ -36,6 +36,16 @@ cekJawaban2.addEventListener('click',()=>{cekJawaban(2,4,12)});
 cekJawaban3.addEventListener('click',()=>{cekJawaban(3,13,15)});
 cekJawaban4.addEventListener('click',()=>{cekJawaban(4,16,23)});
 
+btnSelanjutnya.addEventListener('click', (e) => {
+    if (soalSelesai.sort().join() != "1,2,3,4") {
+        e.preventDefault()
+        Swal.fire({
+            title: "Anda Belum Dapat Berpindah ke Halaman Berikutnya",
+            text: 'Jawab semua soal dengan benar untuk dapat berpindah ke halaman selanjutnya',
+            icon : 'error'
+        })
+    }
+})
 // ------------------ FUNCTION ----------------------
 function cekJawaban(urutanCek,isianPertama, isianTerakhir){
     let benar = 0;
@@ -104,7 +114,8 @@ function cekSoalSelesai() {
             success: function(response){
                 if(response.status == 'updated'){
                     $('#lock-2-3').addClass('d-none');
-                    btnSelanjutnya.removeAttribute('disabled');
+                    btnSelanjutnya.setAttribute('data-bs-toggle','modal')
+                    btnSelanjutnya.setAttribute('data-bs-target','#kuisModal')
                 }
             },
             error: function(reject){

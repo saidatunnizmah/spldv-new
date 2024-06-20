@@ -18,11 +18,11 @@ btnKuis3.addEventListener('click',()=>{
     modalKuisBody.innerHTML = "Anda akan mengerjakan Kuis 3: Penerapan SPLDV"
     modalKuisBtn.setAttribute('href',"/kuis/3")
 })
-if (btnSelanjutnya != null) {
-    let jenisKuis = btnSelanjutnya.getAttribute('data-kuis')
-    btnSelanjutnya.addEventListener('click',()=>{
-        modalKuisBody.innerHTML = "Anda akan mengerjakan Kuis " + jenisKuis+ ": "+title
-        modalKuisBtn.setAttribute('href',"/kuis/"+btnSelanjutnya.getAttribute('data-kuis'))
-    })
-}
+// if (btnSelanjutnya != null) {
+//     let jenisKuis = btnSelanjutnya.getAttribute('data-kuis')
+//     btnSelanjutnya.addEventListener('click',()=>{
+//         modalKuisBody.innerHTML = "Anda akan mengerjakan Kuis " + jenisKuis+ ": "+title
+//         modalKuisBtn.setAttribute('href',"/kuis/"+btnSelanjutnya.getAttribute('data-kuis'))
+//     })
+// }
 

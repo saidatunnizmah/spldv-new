@@ -15,11 +15,9 @@ class CreateChatsTable extends Migration
     {
         Schema::create('chats', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('diskusi_id');
             $table->foreignId('user_id');
             $table->string('pesan');
-            $table->integer('bab');
-            $table->integer('page');
-            $table->string('kelas');
             $table->string('waktu_terkirim');
             $table->timestamps();
         });

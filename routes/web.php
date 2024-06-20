@@ -8,6 +8,7 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PusherAuthController;
 use App\Http\Controllers\DashboardGuruController;
 use App\Http\Controllers\DashboardSiswaController;
+use App\Http\Controllers\DiskusiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,17 +48,24 @@ Route::group(['middleware' => 'auth'], function () {
 
             Route::get('/guru/data-nilai', 'dataNilai')->name('guru.dataNilai');
             Route::get('/guru/data/nilai/{id}', 'getDataNilai');
+
+            Route::get('/guru/data-kelas', 'dataKelas')->name('guru.dataKelas');
+            Route::post('/guru/data-kelas', 'storeKelas')->name('guru.dataKelas.store');
+            Route::put('/guru/data-kelas/{id}', 'updateKelas')->name('guru.dataKelas.update');
+            Route::delete('/guru/data-kelas/{id}', 'deleteKelas')->name('guru.dataKelas.delete');
+            Route::get('/guru/data/kelas/{id}', 'getDataKelasById');
         });
     });
 
     Route::group(['middleware' => 'is_siswa'], function () {
         Route::get('/dashboard', [DashboardSiswaController::class, "index"])->name('siswa.dashboard');
-        Route::get('/progress', [DashboardSiswaController::class, "progress"])->name('siswa.progress');
+        Route::get('/daftar-materi', [DashboardSiswaController::class, "daftarMateri"])->name('siswa.daftar-materi');
         Route::get('/perihal', [DashboardSiswaController::class, "perihal"])->name('siswa.perihal');
 
-        Route::controller(MateriController::class)->group(function () {
-            Route::get('/materi/{bab}/{page}',  'index')->name('siswa.materi');
-            Route::post('/materi/update-progress', 'updateProgress');
+        
+        Route::controller(DiskusiController::class)->group(function(){
+            Route::get('/diskusi/{bab}/{page}', 'getAllDiskusiByBabPage');
+            Route::post('/diskusi', 'create');
         });
 
         Route::controller(KuisController::class)->group(function () {
@@ -69,7 +77,13 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::controller(ChatController::class)->group(function () {
             Route::post('/send-chat', 'sendChat');
-            Route::get('/get-chat', 'getDataChat');
+            Route::get('/get-chat/{diskusi}', 'getChatsByDiskusi');
+        });
+
+        Route::controller(MateriController::class)->group(function () {
+            Route::get('/materi/{bab}/{page}',  'index')->name('siswa.materi');
+            Route::post('/materi/update-progress', 'updateProgress');
+        
         });
     });
 

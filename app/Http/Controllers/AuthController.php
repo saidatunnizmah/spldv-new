@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -43,7 +44,8 @@ class AuthController extends Controller
 
     function register()
     {
-        return view('auth.register');
+        $data['kelas'] = Kelas::all();
+        return view('auth.register', $data);
     }
 
     function store(Request $request)
@@ -76,7 +78,7 @@ class AuthController extends Controller
 
         $newSiswa = Siswa::create([
             'user_id' => $newUser->id,
-            'kelas' => $request->kelas,
+            'kelas_id' => $request->kelas,
             'nisn' => $request->nisn
         ]);
 

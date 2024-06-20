@@ -67,6 +67,17 @@ cekJawaban6.addEventListener('click',()=>{cekJawaban(6,35,37)});
 cekJawaban7.addEventListener('click',()=>{cekJawaban(7,38,46)});
 cekJawaban8.addEventListener('click',()=>{cekJawaban(8,47,54)});
 
+btnSelanjutnya.addEventListener('click', (e)=> {
+    if (soalSelesai.sort().join() != "1,2,3,4,5,6,7,8") {
+        e.preventDefault()
+        Swal.fire({
+            title: "Anda Belum Dapat Berpindah ke Halaman Berikutnya",
+            text: 'Jawab semua soal dengan benar untuk dapat berpindah ke halaman selanjutnya',
+            icon : 'error'
+        })
+    }
+})
+
 // ------------------ FUNCTION ----------------------
 function cekJawaban(urutanCek,isianPertama, isianTerakhir){
     let benar = 0;

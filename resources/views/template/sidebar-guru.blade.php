@@ -12,6 +12,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('guru.dataKelas') }}">
+                    <i class="bi bi-person-video3 fs-5"></i>
+                    Data Kelas
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('guru.dataSiswa') }}">
                     <i class="bi bi-person-lines-fill fs-5"></i>
                     Data Siswa

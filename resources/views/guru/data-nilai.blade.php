@@ -15,15 +15,15 @@
                 <div class="card-body">
                     <h5>Kelas</h5>
                     <ul class="nav nav-tabs" id="siswaTab" role="tablist">
-                        @foreach (range('a','d') as $letter)
+                        @foreach ($kelas as $item)
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link {{ $loop->first ? "active" : "" }}" id="{{ $letter }}-tab" data-bs-toggle="tab" data-bs-target="#{{ $letter }}-tab-pane" type="button" role="tab" aria-controls="{{ $letter }}-tab-pane" aria-selected="true">{{ strtoupper($letter) }}</button>
+                                <button class="nav-link {{ $loop->first ? "active" : "" }}" id="{{ 'kelas-'.$item->id }}-tab" data-bs-toggle="tab" data-bs-target="#{{ 'kelas-'.$item->id }}-tab-pane" type="button" role="tab" aria-controls="{{ 'kelas-'.$item->id }}-tab-pane" aria-selected="true">{{ $item->nama }}</button>
                             </li>
                         @endforeach
                     </ul>
                     <div class="tab-content" id="siswaTabContent">
-                        @foreach (range('a','d') as $letter)
-                        <div class="tab-pane fade py-3 {{ $loop->first ? "show active" : "" }}" id="{{ $letter }}-tab-pane" role="tabpanel" aria-labelledby="{{ $letter }}-tab" tabindex="{{ $loop->index }}">
+                        @foreach ($kelas as $item)
+                        <div class="tab-pane fade py-3 {{ $loop->first ? "show active" : "" }}" id="{{ 'kelas-'.$item }}-tab-pane" role="tabpanel" aria-labelledby="{{ 'kelas-'.$item }}-tab" tabindex="{{ $loop->index }}">
                             
                             <table class="table table-bordered align-middle">
                                 <thead class="table-success text-center">
@@ -41,21 +41,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i< count($dataSiswa[$letter]); $i++)
-                                    <tr class="text-center">
-                                        <td class="text-start">{{ $dataSiswa[$letter][$i]->user->name }}</td>
-                                        <td class="text-start">{{ $dataSiswa[$letter][$i]->nisn }}</td>
-                                        <td>{{ is_null($dataSiswa[$letter][$i]['kuis1Latest']) ? '-' : $dataSiswa[$letter][$i]['kuis1Latest']->nilai }}</td>
-                                        <td>{{ is_null($dataSiswa[$letter][$i]['kuis2Latest']) ? '-' : $dataSiswa[$letter][$i]['kuis2Latest']->nilai }}</td>
-                                        <td>{{ is_null($dataSiswa[$letter][$i]['kuis3Latest']) ? '-' : $dataSiswa[$letter][$i]['kuis3Latest']->nilai }}</td>
-                                        <td>{{ is_null($dataSiswa[$letter][$i]['evaluasiLatest']) ? '-' : $dataSiswa[$letter][$i]['evaluasiLatest']->nilai }}</td>
-                                        <td><button class="btn btn-sm btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#nilaiModal" data-siswa="{{ $dataSiswa[$letter][$i]->id }}">Lihat Riwayat</button></td>
-                                    </tr>
-                                    @endfor
-                                </tbody>
-                            </table>
-                        </div>
-                            
+                                        @foreach ($item->siswa as $siswa)
+                                        <tr class="text-center">
+                                            <td class="text-start">{{ $siswa->user->name }}</td>
+                                            <td class="text-start">{{ $siswa->nisn }}</td>
+                                            <td>{{ is_null($kuis1Latest[$item->id][$siswa->id]) ? '-' : $kuis1Latest[$item->id][$siswa->id]->nilai }}</td>
+                                            <td>{{ is_null($kuis2Latest[$item->id][$siswa->id]) ? '-' : $kuis2Latest[$item->id][$siswa->id]->nilai }}</td>
+                                            <td>{{ is_null($kuis3Latest[$item->id][$siswa->id]) ? '-' : $kuis3Latest[$item->id][$siswa->id]->nilai }}</td>
+                                            <td>{{ is_null($evaluasiLatest[$item->id][$siswa->id]) ? '-' : $evaluasiLatest[$item->id][$siswa->id]->nilai }}</td>
+                                            <td><button class="btn btn-sm btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#nilaiModal" data-siswa="{{ $siswa->id }}">Lihat Riwayat</button></td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         @endforeach
                     </div>
                 </div>

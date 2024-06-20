@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diskusi;
 use App\Models\Siswa;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+// use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Spatie\Browsershot\Browsershot;
 
 class MateriController extends Controller
 {
@@ -37,6 +42,10 @@ class MateriController extends Controller
             $data['btnSelanjutnya']['type'] = 'modal';
         }
         
+        $data['diskusi'] = Diskusi::where('kelas_id', auth()->user()->siswa->kelas_id)
+                        ->where('bab', $bab)
+                        ->where('page', $page)
+                        ->latest()->get();
         $data['title'] = $this->materi[$bab][$page - 1];
         $data['materi'] = view('materi.' . $bab . '-' . $page);
         return view('siswa.materi', $data);
@@ -47,9 +56,6 @@ class MateriController extends Controller
         $siswaId = auth()->user()->siswa->id;
         $bab = $request->bab;
         $page = $request->page;
-        // $totalCek = $request->totalCek;
-        // $cekSelesai = $request->cekSelesai;
-        // $progress = $cekSelesai / $totalCek * 100;
         $progress = $request->progress;
 
         $siswa = Siswa::where('id', $siswaId)->first();
@@ -87,5 +93,22 @@ class MateriController extends Controller
             'status' => 'updated',
             'jalan' => $jalan
         ]);
+    }
+
+    function materiToPDFPage(){
+        $bootstrap5 = file_get_contents(public_path().'/vendor/bootstrap5/css/bootstrap.min.css');
+        $data = [
+            'css' => $bootstrap5
+        ]; 
+        return view('materi.PDF.1-2',$data);
+    }
+
+    function exportMateriToPDF() {
+        $bootstrap5 = file_get_contents(public_path().'/vendor/bootstrap5/css/bootstrap.min.css');
+        $data = [
+            'css' => $bootstrap5
+        ]; 
+
+        return redirect()->route('siswa.materi.pdf-preview');
     }
 }

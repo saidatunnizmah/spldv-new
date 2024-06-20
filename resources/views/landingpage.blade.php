@@ -25,7 +25,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('siswa.progress') }}">Materi</a>
+                        <a class="nav-link" href="{{ route('siswa.daftar-materi') }}">Materi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('landingPage.perihal') }}">Perihal</a>

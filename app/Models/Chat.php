@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Chat extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'diskusi_id',
         'user_id',
         'pesan',
         'bab',
@@ -21,5 +23,9 @@ class Chat extends Model
     function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    function diskusi() : BelongsTo {
+        return $this->belongsTo(Diskusi::class);
     }
 }

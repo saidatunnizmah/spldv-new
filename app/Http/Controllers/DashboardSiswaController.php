@@ -20,7 +20,7 @@ class DashboardSiswaController extends Controller
         return view('siswa.dashboard', $data);
     }
 
-    function progress()
+    function daftarMateri()
     {
         $siswaId = auth()->user()->siswa->id;
         $data['siswa'] = auth()->user()->siswa;

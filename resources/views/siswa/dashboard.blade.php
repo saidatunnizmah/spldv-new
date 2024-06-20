@@ -28,7 +28,7 @@
                             </tr>
                             <tr>
                                 <th>Kelas</th>
-                                <td>: VII {{ auth()->user()->siswa->kelas }}</td>
+                                <td>: {{ auth()->user()->siswa->kelas->nama }}</td>
                             </tr>
                             <tr>
                                 <th>Email</th>

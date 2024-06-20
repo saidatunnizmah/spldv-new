@@ -60,12 +60,9 @@
                                     <label for="kelas" class="form-label">Kelas</label>
                                     <select class="form-select @error('kelas') is-invalid @enderror" id="kelas" name="kelas" aria-label="Default select example" >
                                         <option>Pilih kelas anda</option>
-                                        <option value="A" {{ old('kelas')=='A'? 'selected' : '' }}>A</option>
-                                        <option value="B" {{ old('kelas')=='B'? 'selected' : '' }}>B</option>
-                                        <option value="C" {{ old('kelas')=='C'? 'selected' : '' }}>C</option>
-                                        <option value="D" {{ old('kelas')=='D'? 'selected' : '' }}>D</option>
-                                        <option value="E" {{ old('kelas')=='E'? 'selected' : '' }}>E</option>
-                                        <option value="F" {{ old('kelas')=='F'? 'selected' : '' }}>F</option>
+                                        @foreach ($kelas as $item)
+                                        <option value="{{ $item->id }}" {{ old('kelas') == $item->id? 'selected' : '' }}>{{ $item->nama }}</option>
+                                        @endforeach
                                     </select>
                                     @error('kelas')
                                     <div class="invalid-feedback">

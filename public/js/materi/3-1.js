@@ -259,6 +259,15 @@ $('#isian-22').on('change', function(){
     MathJax.typeset();
 })
 
+btnSelanjutnya.addEventListener('click', (e)=> {
+    if (soalSelesai.sort().join() != "1,2,3") {
+        Swal.fire({
+            title: "Anda Belum Dapat Berpindah ke Halaman Berikutnya",
+            text: 'Jawab semua soal dengan benar untuk dapat berpindah ke halaman selanjutnya',
+            icon : 'error'
+        })
+    }
+})
 // --------- FUNCTION -----------
 function cekJawaban(urutanCek,isianPertama, isianTerakhir){
     let benar = 0;
@@ -326,7 +335,8 @@ function cekSoalSelesai() {
             success: function(response){
                 if(response.status == 'updated'){
                     $('#lock-3-1').addClass('d-none');
-                    btnSelanjutnya.removeAttribute('disabled');
+                    btnSelanjutnya.setAttribute('data-bs-toggle','modal')
+                    btnSelanjutnya.setAttribute('data-bs-target','#kuisModal')
                 }
             },
             error: function(reject){

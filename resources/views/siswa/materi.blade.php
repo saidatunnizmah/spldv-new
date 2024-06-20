@@ -24,16 +24,16 @@
                 @endif
 
                 @if ($btnSelanjutnya['type'] =='page')
-                    <a href="{{ $btnSelanjutnya['url'] }}" class="btn btn-primary" id="btnSelanjutnya" disabled>Selanjutnya</a>
+                    <a href="{{ $btnSelanjutnya['url'] }}" class="btn btn-primary" id="btnSelanjutnya">Selanjutnya</a>
                     {{-- <button class="btn btn-primary" id="btnNextPage">Selanjutnya <i class="bi bi-chevron-right"></i></button> --}}
                 @endif
                 @if ($btnSelanjutnya['type'] =='bab')
-                    <a href="{{ $btnSelanjutnya['url'] }}" class="btn btn-primary" id="btnSelanjutnya" disabled>Selanjutnya</a>
+                    <a href="{{ $btnSelanjutnya['url'] }}" class="btn btn-primary" id="btnSelanjutnya" >Selanjutnya</a>
                     {{-- <button class="btn btn-primary" id="btnNextBab">Selanjutnya <i class="bi bi-chevron-right"></i></button> --}}
                 @endif
                 
                 @if ($btnSelanjutnya['type']=='modal')
-                <button type="button" id="btnSelanjutnya" disabled class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kuisModal" data-kuis="{{ $bab }}">
+                <button type="button" id="btnSelanjutnya" class="btn btn-primary"  data-kuis="{{ $bab }}">
                     Selanjutnya <i class="bi bi-chevron-right"></i>
                 </button>
                 @endif
@@ -46,14 +46,59 @@
             </h4>
             <div class="card" id="card-chat">
                 <div class="card-body">
-                    <div id="chat-container">
-                        
+                    <div id="daftar-diskusi">
+                        <h6 class="fw-bold">Daftar Diskusi</h6>
+                        <div id="diskusi-container">
+                            @foreach ($diskusi as $item)
+                            <button class="diskusi-item" data-diskusi="{{ $item->id }}" data-judul="{{ $item->judul }}" data-pembuat="">
+                                <div class="diskusi-title">
+                                    <p class="text-start m-0">
+                                        {{ $item->judul }}
+                                    </p>
+                                    <small class="fw-normal">Dibuat oleh: {{ $item->pembuat }}</small>
+                                </div>
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                            @endforeach
+                            
+                            
+                        </div>
+                        <button id="btnBuatDiskusi">
+                            <div class="diskusi-title">
+                                Buat Diskusi Baru
+                            </div>
+                            <i class="bi bi-plus-square-fill"></i>
+                        </button>
+                        <div id="formBuatDiskusi" class="d-none">
+                            <div class="input-group mb-3">
+                                <input type="text" id="inputBuatDiskusi" class="form-control" placeholder="Masukkan judul diskusi.." aria-label="Masukkan judul diskusi.." aria-describedby="btnInputBuatDiskusi">
+                                <button class="btn btn-outline-secondary" type="button" id="btnInputBuatDiskusi">Buat</button>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-danger btn-sm" id="btnBatalBuatDiskusi">Batal</button>    
+                            </div>                              
+                        </div>
                     </div>
-                    <div class="chat-input">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="chatInput" placeholder="Ketik pesan..." aria-label="Ketik pesan..." >
-                            <button class="btn btn-outline-secondary" type="button" id="btn-kirim"><i class="bi bi-send"></i></button>
-                        </div>                          
+                    <div id="chat" class="d-none">
+                        <div id="judul-diskusi-container" class="border-bottom mb-1">
+                            <button class="btn border-end" id="btnBackDaftarDiskusi">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <div class="judul-container" >
+                                <p class="m-0 fw-bold" id="judulDiskusi"></p>
+                                <small>Dibuat oleh: <span id="pembuatDiskusi"></span></small>
+                            </div>
+                        </div>
+                        <div id="chat-container">
+                            
+                        </div>
+                        <div class="chat-input">
+                            <div class="input-group">
+                                <input type="hidden" id="diskusiIdInput">
+                                <input type="text" class="form-control" id="chatInput" placeholder="Ketik pesan..." aria-label="Ketik pesan..." >
+                                <button class="btn btn-outline-secondary" type="button" id="btn-kirim"><i class="bi bi-send"></i></button>
+                            </div>                          
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,7 +158,7 @@
 <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
 <script async src="{{ asset('js/materi/chat.js') }}"></script>
 <script>
-    const kelas = '{{ auth()->user()->siswa->kelas }}'
+    const kelas = '{{ auth()->user()->siswa->kelas->nama }}'
     let title = "{{ $title }}"
     let id = {{ auth()->user()->id }}
     $('math-field').each(function(){

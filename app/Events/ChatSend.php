@@ -14,21 +14,19 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class ChatSend implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $senderId, $senderName, $pesan, $bab, $page, $kelas, $waktuTerkirim;
+    public $senderId, $senderName, $pesan, $diskusiId, $waktuTerkirim;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($senderId, $pesan, $bab, $page, $kelas)
+    public function __construct($senderId, $pesan, $diskusiId)
     {
         $this->senderId = $senderId;
         $senderData = User::find($senderId);
         $this->senderName = $senderData->name;
         $this->pesan = $pesan;
-        $this->bab = $bab;
-        $this->page = $page;
-        $this->kelas = $kelas;
+        $this->diskusiId = $diskusiId;
         date_default_timezone_set('Asia/Kuala_Lumpur');
         $this->waktuTerkirim = date("H:i");
     }
@@ -41,7 +39,7 @@ class ChatSend implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('chat.' . $this->bab . '-' . $this->page . $this->kelas),
+            new PrivateChannel('chat.diskusi-' . $this->diskusiId ),
         ];
     }
 

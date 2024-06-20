@@ -16,7 +16,7 @@ class CreateSiswasTable extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('kelas');
+            $table->foreignId('kelas_id');
             $table->string('nisn');
             $table->string('bab')->default(0);
             $table->string('page')->default(1);

@@ -8,7 +8,18 @@ let urlSplitted = window.location.href.split('/')
 let bab = urlSplitted[urlSplitted.length - 2]
 let page = urlSplitted[urlSplitted.length - 1]
 
-btnSelanjutnya.setAttribute('disabled',true);
+let pindahHalaman = 0
+
+btnSelanjutnya.addEventListener('click', (e) => {
+    if (pindahHalaman == 0) {
+        e.preventDefault()
+        Swal.fire({
+            title: 'Anda Belum Dapat Berpindah ke Halaman Berikutnya',
+            text : 'Jawab soal dengan benar untuk bisa lanjut ke halaman berikutnya',
+            icon: 'error'
+        })
+    }
+})
 
 cekJawabanBtn.addEventListener('click',()=>{
     let salah = 0;
@@ -45,7 +56,7 @@ cekJawabanBtn.addEventListener('click',()=>{
                     success: function(response){
                         if(response.status == 'updated' || response.status == 'no-change'){
                             $('#lock-1').addClass('d-none');
-                            btnSelanjutnya.removeAttribute('disabled');
+                            pindahHalaman = 1
                             cardKesimpulan.classList.remove('d-none');
                         }
                     },
@@ -66,7 +77,3 @@ cekJawabanBtn.addEventListener('click',()=>{
         });
     }
 })
-
-function updateProgress() {
-    
-}

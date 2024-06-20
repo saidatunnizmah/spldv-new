@@ -17,4 +17,10 @@
 </p>
 <div class="text-center">
     <iframe src="https://scratch.mit.edu/projects/918914056/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    <div class="form-check justify-content-center mt-3">
+        <input class="form-check-input" type="checkbox" value="" disabled id="sudahNontonCheck">
+        <label class="form-check-label" for="sudahNontonCheck">
+          Sudah Menonton
+        </label>
+      </div>      
 </div>

@@ -12,7 +12,13 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('siswa.progress') }}">
+                <a href="{{ route('siswa.daftar-materi') }}">
+                    <i class="bi bi-book-half fs-5"></i>
+                    Materi
+                </a>
+            </li>
+            <li>
+                <a href="">
                     <i class="bi bi-clipboard-check-fill fs-5"></i>
                     Progres
                 </a>

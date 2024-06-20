@@ -97,32 +97,77 @@
     </div>
 </div>
 <div id="drag-to-container">
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=1 id="drag-target-1">
-        1
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=1 id="drag-target-1">
+            1
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=2 id="drag-target-2">
-        2
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=2 id="drag-target-2">
+            2
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=3 id="drag-target-3">
-        3
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=3 id="drag-target-3">
+            3
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=4 id="drag-target-4">
-        4
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=4 id="drag-target-4">
+            4
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=5 id="drag-target-5">
-        5
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=5 id="drag-target-5">
+            5
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=6 id="drag-target-6">
-        6
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=6 id="drag-target-6">
+            6
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=7 id="drag-target-7">
-        7
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=7 id="drag-target-7">
+            7
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=8 id="drag-target-8">
-        8
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=8 id="drag-target-8">
+            8
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
-    <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=9 id="drag-target-9">
-        9
+    <div class="text-center">
+        <div class="drag-to-target" ondragover="allowDrop(event)" ondrop="drop(event)" data-order=9 id="drag-target-9">
+            9
+        </div>
+        <div class="feedback">
+            <i class="bi bi-x-lg text-danger"></i>
+        </div>
     </div>
 </div>
 
@@ -194,6 +239,15 @@ Dapat ditulis sebagai:
 </div>
 <div class="text-center mt-2">
     <button class="btn btn-success" id="cekJawaban3">Cek Jawaban</button>
+</div>
+
+<div class="text-center d-none" id="persamaanUtuhPalui">
+    $$ 
+        \begin{cases}
+         x+2y = 17.000 \ \ (Belanjaan \ Utuh) \\
+         2x + y = 19.000 \ \ (Belanjaan \ Palui)
+        \end{cases}
+    $$
 </div>
 
 <p class="materi-paragraph mt-4">

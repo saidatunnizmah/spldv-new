@@ -21,15 +21,15 @@
                 <div class="card-body">
                     <h5>Kelas</h5>
                     <ul class="nav nav-tabs" id="siswaTab" role="tablist">
-                        @foreach (range('a','d') as $letter)
+                        @foreach ($kelas as $item)
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link {{ $loop->first ? "active" : "" }}" id="{{ $letter }}-tab" data-bs-toggle="tab" data-bs-target="#{{ $letter }}-tab-pane" type="button" role="tab" aria-controls="{{ $letter }}-tab-pane" aria-selected="true">{{ strtoupper($letter) }}</button>
+                                <button class="nav-link {{ $loop->first ? "active" : "" }}" id="{{ 'kelas-'.$item->id }}-tab" data-bs-toggle="tab" data-bs-target="#{{ 'kelas-'.$item->id }}-tab-pane" type="button" role="tab" aria-controls="{{ 'kelas-'.$item->id }}-tab-pane" aria-selected="true">{{ $item->nama }}</button>
                             </li>
                         @endforeach
                     </ul>
                     <div class="tab-content" id="siswaTabContent">
-                        @foreach (range('a','d') as $letter)
-                        <div class="tab-pane fade py-3 {{ $loop->first ? "show active" : "" }}" id="{{ $letter }}-tab-pane" role="tabpanel" aria-labelledby="{{ $letter }}-tab" tabindex="{{ $loop->index }}">
+                        @foreach ($kelas as $item)
+                        <div class="tab-pane fade py-3 {{ $loop->first ? "show active" : "" }}" id="{{ 'kelas-'.$item->id }}-tab-pane" role="tabpanel" aria-labelledby="{{ 'kelas-'.$item->id }}-tab" tabindex="{{ $loop->index }}">
                             <table class="table table-bordered align-middle">
                                 <thead class="table-success text-center">
                                     <tr class="align-middle">
@@ -50,7 +50,36 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i< count($dataSiswa[$letter]); $i++)
+                                    @foreach ($item->siswa as $siswa)
+                                    <tr class="text-center">
+                                        <td class="text-start">{{ $siswa->user->name }}</td>
+                                        <td class="text-start">{{ $siswa->user->email }}</td>
+                                        <td>{{ $siswa->nisn }}</td>
+                                        <td>{{ $siswa->bab }}</td>
+                                        <td>{{ $siswa->page  }}</td>
+                                        <td>
+                                            {!! $kuis1[$item->id][$siswa->id] > 0 ? '<i class="bi bi-check-lg text-success"></i>' : '<i class="bi bi-x-lg text-danger"></i>' !!}
+                                        </td>
+                                        <td>
+                                            {!! $kuis2[$item->id][$siswa->id] > 0 ? '<i class="bi bi-check-lg text-success"></i>' : '<i class="bi bi-x-lg text-danger"></i>' !!}
+                                        </td>
+                                        <td>
+                                            {!! $kuis3[$item->id][$siswa->id] ? '<i class="bi bi-check-lg text-success"></i>' : '<i class="bi bi-x-lg text-danger"></i>' !!}
+                                        </td>
+                                        <td>
+                                            {!! $evaluasi[$item->id][$siswa->id] > 0 ? '<i class="bi bi-check-lg text-success"></i>' : '<i class="bi bi-x-lg text-danger"></i>' !!}
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-warning btn-sm btn-modal-edit" data-bs-toggle="modal" data-bs-target="#editSiswaModal" data-siswa="{{ $siswa->id }}">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <button class="btn btn-danger btn-sm btn-hapus" data-siswa="{{ $siswa->id }}">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    {{-- @for ($i = 0; $i< count($dataSiswa[$letter]); $i++)
                                     <tr class="text-center">
                                         <td class="text-start">{{ $dataSiswa[$letter][$i]->user->name }}</td>
                                         <td class="text-start">{{ $dataSiswa[$letter][$i]->user->email }}</td>
@@ -78,11 +107,10 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    @endfor
+                                    @endfor --}}
                                 </tbody>
                             </table>
                         </div>
-                            
                         @endforeach
                     </div>
                 </div>
