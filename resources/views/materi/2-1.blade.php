@@ -78,66 +78,69 @@
         <li>
             Pada kedua persamaan tersebut koefisien variabel \(x\) adalah <math-field class="d-inline-block mx-1" style="width: 5em" id="isian-7"></math-field> dan <math-field class="d-inline-block mx-1" style="width: 5em" id="isian-8"></math-field>. Karena nilainya tidak sama maka langkah pertama yang harus dilakukan adalah menyamakan koefisien variabel tersebut, dengan cara mengalikan persamaan dengan bilangan bulat sehingga membentuk persamaan baru.
             <div class="d-flex align-items-center gap-2 mt-1">
-                (1)
-                <math-field id="isian-9"></math-field>
-                \(+\)
-                <math-field id="isian-10"></math-field>
-                \(=\)
-                <math-field id="isian-11"></math-field>
-
-                <span class="ms-3">\(\times 1\)</span>
+                Persamaan (1) dikali
+                <select name="select-soal-9" id="isian-9">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
             </div>
             <div class="d-flex align-items-center gap-2 mt-1">
-                (2)
-                <math-field id="isian-12"></math-field>
+                Persamaan (2) dikali
+                <select name="select-soal-9" id="isian-10">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </li>
+        <li>
+            Sehingga menghasilkan persamaan baru yaitu:
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <math-field id="isian-11"></math-field>
                 \(+\)
-                <math-field id="isian-13"></math-field>
+                <math-field id="isian-12"></math-field>
                 \(=\)
-                <math-field id="isian-14"></math-field>
+                <math-field id="isian-13"></math-field>
 
-                <span class="ms-3">\(\times 2\)</span>
+                <small>Hasil Perkalian (1) atau <br> Persamaan (3)</small>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <math-field id="isian-14"></math-field>
+                \(+\)
+                <math-field id="isian-15"></math-field>
+                \(=\)
+                <math-field id="isian-16"></math-field>
+
+                <small>Hasil Perkalian (2) atau <br> Persamaan (4)</small>
             </div>
             <div class="text-center mt-3">
                 <button class="btn btn-success" id="cekJawaban2">Cek Jawaban</button>
             </div>
         </li>
         <li>
-            Sehingga menghasilkan persamaan baru yaitu:
-            <div class="d-flex align-items-center gap-2 mt-1">
-                (3)
-                <math-field id="isian-15"></math-field>
-                \(+\)
-                <math-field id="isian-16"></math-field>
-                \(=\)
-                <math-field id="isian-17"></math-field>
-            </div>
-            <div class="text-center mt-3">
-                <button class="btn btn-success" id="cekJawaban3">Cek Jawaban</button>
-            </div>
-        </li>
-        <li>
-            Menggunakan persamaan baru, kita dapat mengeliminasi variabel \(x\) dengan cara mengurangkan persamaan (1) dengan persamaan (3).
+            Menggunakan persamaan baru, kita dapat mengeliminasi variabel \(x\) dengan cara mengurangkan persamaan (3) dengan persamaan (4).
             <table class="mt-2">
-                <tr>
-                    <td>(1)</td>
-                    <td class="d-flex align-items-center gap-2">
-                        <math-field id="isian-18"></math-field>
-                        \(+\)
-                        <math-field id="isian-19"></math-field>
-                    </td>
-                    <td class="px-2">\(=\)</td>
-                    <td><math-field id="isian-20"></math-field></td>
-                    <td></td>
-                </tr>
                 <tr>
                     <td>(3)</td>
                     <td class="d-flex align-items-center gap-2">
-                        <math-field id="isian-21"></math-field>
+                        <math-field id="isian-17"></math-field>
                         \(+\)
-                        <math-field id="isian-22"></math-field>
+                        <math-field id="isian-18"></math-field>
                     </td>
                     <td class="px-2">\(=\)</td>
-                    <td><math-field id="isian-23"></math-field></td>
+                    <td><math-field id="isian-19"></math-field></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>(4)</td>
+                    <td class="d-flex align-items-center gap-2">
+                        <math-field id="isian-20"></math-field>
+                        \(+\)
+                        <math-field id="isian-21"></math-field>
+                    </td>
+                    <td class="px-2">\(=\)</td>
+                    <td><math-field id="isian-22"></math-field></td>
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -146,8 +149,11 @@
                     <td class="text-center" style="width: 3em"> \(-\)</td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="text-end">
-                        <math-field id="isian-24" style="width: 5em"></math-field> \(y\)
+                    <td></td>
+                    <td class="d-flex align-items-center justify-content-end gap-2">
+                        <math-field id="isian-23"></math-field>
+                        \(+\)
+                        <math-field id="isian-24"></math-field> \(y\)
                     </td>
                     <td class="px-2">\(=\)</td>
                     <td><math-field id="isian-25"></math-field></td>
@@ -161,7 +167,7 @@
                 </tr>
             </table>
             <div class="text-center mt-3">
-                <button class="btn btn-success" id="cekJawaban4">Cek Jawaban</button>
+                <button class="btn btn-success" id="cekJawaban3">Cek Jawaban</button>
             </div>
         </li>
         <li>
@@ -179,66 +185,69 @@
             , karena nilainya tidak sama maka samakan kedua koefisien variable tersebut.
             
             <div class="d-flex align-items-center gap-2 mt-1">
-                (1)
-                <math-field id="isian-29"></math-field>
-                \(+\)
-                <math-field id="isian-30"></math-field>
-                \(=\)
-                <math-field id="isian-31"></math-field>
-
-                <span class="ms-3">\(\times 2\)</span>
+                Persamaan (1) dikali
+                <select name="select-soal-29" id="isian-29">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
             </div>
             <div class="d-flex align-items-center gap-2 mt-1">
-                (2)
+                Persamaan (2) dikali
+                <select name="select-soal-30" id="isian-30">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </li>
+        <li>
+            Sehingga menghasilkan persamaan baru yaitu:
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <math-field id="isian-31"></math-field>
+                \(+\)
                 <math-field id="isian-32"></math-field>
-                \(+\)
+                \(=\)
                 <math-field id="isian-33"></math-field>
-                \(=\)
-                <math-field id="isian-34"></math-field>
 
-                <span class="ms-3">\(\times 1\)</span>
+                <small>Hasil Perkalian (1) atau <br> Persamaan (5)</small>
             </div>
-            <div class="text-center mt-3">
-                <button class="btn btn-success" id="cekJawaban5">Cek Jawaban</button>
-            </div>
-        </li>
-        <li>
-            Untuk menyamakan koefisien dari variabel \(y\) kita mengalikan persamaan (2) dengan 2, sehingga menghailkan persamaan baru yaitu:
-            <div class="d-flex align-items-center gap-2 my-2">
-                (4)
-                <math-field id="isian-35"></math-field>
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <math-field id="isian-34"></math-field>
                 \(+\)
-                <math-field id="isian-36"></math-field>
+                <math-field id="isian-35"></math-field>
                 \(=\)
-                <math-field id="isian-37"></math-field>
+                <math-field id="isian-36"></math-field>
+
+                <small>Hasil Perkalian (2) atau <br> Persamaan (6)</small>
             </div>
             <div class="text-center mt-3">
-                <button class="btn btn-success" id="cekJawaban6">Cek Jawaban</button>
+                <button class="btn btn-success" id="cekJawaban4">Cek Jawaban</button>
             </div>
         </li>
         <li>
-            Dengan persamaan baru kita dapat mengeliminasi \(y\) dari persamaan (2) dan (4).
+            Dengan persamaan baru kita dapat mengeliminasi \(y\) dari persamaan (5) dan (6).
             <table class="mt-2 table-hitung">
                 <tr>
-                    <td>(1)</td>
+                    <td>(5)</td>
                     <td class="d-flex align-items-center gap-2">
-                        <math-field id="isian-38"></math-field>
+                        <math-field id="isian-37"></math-field>
                         \(+\)
-                        <math-field id="isian-39"></math-field>
+                        <math-field id="isian-38"></math-field>
                     </td>
                     <td class="px-2">\(=\)</td>
-                    <td><math-field id="isian-40"></math-field></td>
+                    <td><math-field id="isian-39"></math-field></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>(4)</td>
+                    <td>(6)</td>
                     <td class="d-flex align-items-center gap-2">
-                        <math-field id="isian-41"></math-field>
+                        <math-field id="isian-40"></math-field>
                         \(+\)
-                        <math-field id="isian-42"></math-field>
+                        <math-field id="isian-41"></math-field>
                     </td>
                     <td class="px-2">\(=\)</td>
-                    <td><math-field id="isian-43"></math-field></td>
+                    <td><math-field id="isian-42"></math-field></td>
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -247,8 +256,11 @@
                     <td class="text-center" style="width: 3em"> \(-\)</td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="text-end">
-                        <math-field id="isian-44"></math-field> \(x\)
+                    <td></td>
+                    <td class="text-end">
+                        <math-field id="isian-43"></math-field> \(x\)
+                        \(+\)
+                        <math-field id="isian-44"></math-field> 
                     </td>
                     <td class="px-2">\(=\)</td>
                     <td><math-field id="isian-45"></math-field></td>
@@ -262,7 +274,7 @@
                 </tr>
             </table>
             <div class="text-center mt-3">
-                <button class="btn btn-success" id="cekJawaban7">Cek Jawaban</button>
+                <button class="btn btn-success" id="cekJawaban5">Cek Jawaban</button>
             </div>
         </li>
     </ul>
@@ -311,7 +323,7 @@
     </div>
 
     <div class="text-center mt-3">
-        <button class="btn btn-success" id="cekJawaban8">Cek Jawaban</button>
+        <button class="btn btn-success" id="cekJawaban6">Cek Jawaban</button>
     </div>
 </div>
 

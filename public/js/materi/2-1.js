@@ -6,39 +6,37 @@ let keyAnswer = {
 
     // Cek Jawban 2
     'isian-7' : '2', 'isian-8' : '1',
-    'isian-9' : '2x', 'isian-10' : 'y',
-    'isian-11' : ['17000','17.000'], 'isian-12' : 'x',
-    'isian-13' : '2y', 'isian-14' : ['19000','19.000'],
-
-    // Cek jawban 3
-    'isian-15' : '2x', 'isian-16' : '4y',
-    'isian-17' : ['38000','38.000'],
+    'isian-9' : '1', 'isian-10' : '2',
+    'isian-11' : '2x', 'isian-12' : 'y',
+    'isian-13' : ['17000,17.000'], 
+    'isian-14' : '2x', 'isian-15' : '4y',
+    'isian-16' : ['38000','38.000'],
     
-    // Cek Jawaban 4
-    'isian-18' : '2x',
-    'isian-19' : 'y', 'isian-20' : ['17000','17.000'],
-    'isian-21' : '2x', 'isian-22' : '4y',
-    'isian-23' : ['38000','38.000'], 'isian-24' : '-3',
+    // Cek Jawaban 3
+    'isian-17' : '2x', 'isian-18' : 'y',
+    'isian-19' : ['17000','17.000'], 
+    'isian-20' : '2x', 'isian-21' : '4y',
+    'isian-22' : ['38000','38.000'],
+    'isian-23' : '0', 'isian-24' : '-3',
     'isian-25' : ['-21000','-21.000'], 'isian-26' : ['7000','7.000'],
 
-    // Cek Jawbana 5
+    // Cek Jawbana 4
     'isian-27' : '1', 'isian-28' : '2',
-    'isian-29' : '2x', 'isian-30' : 'y',
-    'isian-31' : ['17000','17.000'], 'isian-32' : 'x',
-    'isian-33' : '2y', 'isian-34' : ['19000','19.000'],
-
-    // Cek Jawbaan 6
-    'isian-35' : '4x', 'isian-36' : '2y',
-    'isian-37' : ['34000','34.000'],
+    'isian-29' : '2', 'isian-30' : '1',
+    'isian-31' : '4x', 'isian-32' : '2y',
+    'isian-33' : ['34000','34.000'], 
+    'isian-34' : 'x', 'isian-35' : '2y', 
+    'isian-36' : ['19000','19.000'],
     
-    // Cek Jawbaan 7
-    'isian-38' : 'x',
-    'isian-39' : '2y', 'isian-40' : ['19000','19.000'],
-    'isian-41' : '4x', 'isian-42' : '2y',
-    'isian-43' : ['34000','34.000'], 'isian-44' : '-3',
-    'isian-45' : ['-15000','-15.000'], 'isian-46' : ['5000','5.000'],
+    // Cek Jawbaan 5
+    'isian-37' : '4x', 'isian-38' : '2y',
+    'isian-39' : ['34000','34.000'], 
+    'isian-40' : 'x', 'isian-41' : '2y', 
+    'isian-42' : ['19000','19.000'],
+    'isian-43' : '3', 'isian-44' : '0',
+    'isian-45' : ['15000','15.000'], 'isian-46' : ['5000','5.000'],
 
-    // Cek Jawaban 8
+    // Cek Jawaban 6
     'isian-47' : ['5000','5.000'], 'isian-48' : ['7000','7.000'],
     'isian-49' : ['10000','10.000'], 'isian-50' : '+',
     'isian-51' : ['7000','7.000'], 'isian-52' : ['5000','5.000'],
@@ -52,20 +50,17 @@ let cekJawaban4 = document.getElementById('cekJawaban4');
 let cekJawaban5 = document.getElementById('cekJawaban5');
 let cekJawaban6 = document.getElementById('cekJawaban6');
 let cekJawaban7 = document.getElementById('cekJawaban7');
-let cekJawaban8 = document.getElementById('cekJawaban8');
 
 let urlSplitted = window.location.href.split('/')
 let bab = urlSplitted[urlSplitted.length - 2]
 let page = urlSplitted[urlSplitted.length - 1]
 
 cekJawaban1.addEventListener('click',()=>{cekJawaban(1,1,6)});
-cekJawaban2.addEventListener('click',()=>{cekJawaban(2,7,14)});
-cekJawaban3.addEventListener('click',()=>{cekJawaban(3,15,17)});
-cekJawaban4.addEventListener('click',()=>{cekJawaban(4,18,26)});
-cekJawaban5.addEventListener('click',()=>{cekJawaban(5,27,34)});
-cekJawaban6.addEventListener('click',()=>{cekJawaban(6,35,37)});
-cekJawaban7.addEventListener('click',()=>{cekJawaban(7,38,46)});
-cekJawaban8.addEventListener('click',()=>{cekJawaban(8,47,54)});
+cekJawaban2.addEventListener('click',()=>{cekJawaban(2,7,16)});
+cekJawaban3.addEventListener('click',()=>{cekJawaban(3,17,26)});
+cekJawaban4.addEventListener('click',()=>{cekJawaban(4,27,36)});
+cekJawaban5.addEventListener('click',()=>{cekJawaban(5,37,46)});
+cekJawaban6.addEventListener('click',()=>{cekJawaban(6,47,54)});
 
 btnSelanjutnya.addEventListener('click', (e)=> {
     if (soalSelesai.sort().join() != "1,2,3,4,5,6,7,8") {
