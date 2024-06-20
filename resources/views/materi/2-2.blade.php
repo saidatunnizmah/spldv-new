@@ -217,7 +217,9 @@
 </div>
 
 <p class="materi-paragraph">
-    Karena kedua persamaan tersebut bernilai benar, maka nilai variabel \(x\) dan \(y\) yang kita peroleh dengan metode subtitusi adalah benar. Dengan demikian langkah-langkah metode subtitusi adalah sebagai berikut :
+    Karena kedua persamaan tersebut bernilai benar, maka nilai variabel \(x\) dan \(y\) yang kita peroleh dengan metode subtitusi adalah benar. 
+    <br><br>
+    Dengan demikian langkah-langkah metode subtitusi adalah sebagai berikut :
 </p>
 
 <ol class="my-3">

@@ -174,7 +174,7 @@
     <span class="me-2 fw-bold">3. </span>Eliminasi harga kasturi (variabel \(y\))
     <ul class="ayo-mencoba-step">
         <li>
-            Cara yang sama dapat kita lakukan untuk mengetahui variabel \(y\), yaitu dengan cara mengeliminasi \(y\) dari kedua persamaan tersebut. Pada kedua persamaan tersebut koefisien variabel \(y\) adalah
+            Cara yang sama dapat kita lakukan untuk mengetahui variabel \(x\), yaitu dengan cara mengeliminasi \(y\) dari kedua persamaan tersebut. Pada kedua persamaan tersebut koefisien variabel \(y\) adalah
             <math-field class="d-inline-block mx-1" style="width: 5em" id="isian-27"></math-field> dan <math-field class="d-inline-block mx-1" style="width: 5em" id="isian-28"></math-field>
             , karena nilainya tidak sama maka samakan kedua koefisien variable tersebut.
             
@@ -318,8 +318,10 @@
 <div class="mt-3">
     <span class="me-2 fw-bold">4. </span> Kesimpulan
     <p class="materi-paragraph">
-        Karena kedua persamaan tersebut bernilai benar maka nilai variabel \(x\) dan \(y\) yang kita peroleh dengan metode eliminasi adalah benar. Dengan demikian langkah-langkah metode eliminasi adalah sebagai berikut:
+        Karena kedua persamaan tersebut bernilai benar maka nilai variabel \(x\) dan \(y\) yang kita peroleh dengan metode eliminasi adalah benar. 
+        Melalui metode eliminasi kita mengetahui harga 1 bungkus pakasam adalah Rp. 5.000 dan harga 1 bungkus kasturi adalah Rp. 7.000.
     </p>
+    <p>Dengan demikian langkah-langkah metode eliminasi adalah sebagai berikut:</p>
     <ol>
         <li>Menyamakan koefisien salah satu variabelnya (misal \(x\))</li>
         <li>Mengeliminasi variabel \(x\) sehingga diperoleh nilai variabel \(y\)</li>

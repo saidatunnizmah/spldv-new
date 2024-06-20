@@ -14,9 +14,9 @@
                                   Hai {{ Auth::user()->name }}!
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="#">Profil</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                                    {{-- <li><a class="dropdown-item" href="#">Profil</a></li> --}}
+                                    {{-- <li><hr class="dropdown-divider"></li> --}}
+                                    <li><a class="dropdown-item logout" href="{{ route('logout') }}">Logout</a></li>
                                 </ul>
                             </div>
                         </div>

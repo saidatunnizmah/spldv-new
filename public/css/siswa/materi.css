@@ -1,4 +1,7 @@
 /* SIDEBAR */
+.logout{
+    color: #dc3545;
+}
 #sidebar-menu{
     max-height: 85vh;
     /* background-color: red; */
