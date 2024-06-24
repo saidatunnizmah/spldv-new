@@ -36,7 +36,19 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
 });
 
+
+
 Route::group(['middleware' => 'auth'], function () {
+    Route::controller(DiskusiController::class)->group(function(){
+        Route::get('/guru/diskusi', 'index')->name('guru.diskusi')->middleware('is_guru');
+        Route::post('/guru/diskusi', 'create')->middleware('is_guru')->name('guru.diskusi.store');
+        Route::put('/guru/diskusi/{id}', 'update')->middleware('is_guru');
+        Route::delete('/guru/diskusi/{id}', 'destroy')->middleware('is_guru');
+        
+        Route::get('/diskusi/{bab}/{page}', 'getAllDiskusiByBabPage');
+        Route::get('/diskusi/{id}', 'getDiskusiById');
+    });
+
     Route::group(['middleware' => 'is_guru'], function () {
         Route::controller(DashboardGuruController::class)->group(function () {
             Route::get('/guru/dashboard', 'index')->name('guru.dashboard');
@@ -47,6 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::delete('/guru/data-siswa/{id}', 'deleteDataSiswa')->name('guru.dataSiswa.delete');
 
             Route::get('/guru/data-nilai', 'dataNilai')->name('guru.dataNilai');
+            Route::get('guru/data-nilai/download/{id}' , 'exportNilaiToPdfByKelas')->name('guru.dataNilai.exportNilaiKelas');
             Route::get('/guru/data/nilai/{id}', 'getDataNilai');
 
             Route::get('/guru/data-kelas', 'dataKelas')->name('guru.dataKelas');
@@ -54,19 +67,17 @@ Route::group(['middleware' => 'auth'], function () {
             Route::put('/guru/data-kelas/{id}', 'updateKelas')->name('guru.dataKelas.update');
             Route::delete('/guru/data-kelas/{id}', 'deleteKelas')->name('guru.dataKelas.delete');
             Route::get('/guru/data/kelas/{id}', 'getDataKelasById');
+
+            Route::get('/guru/set-kuis', 'setKuis')->name('guru.setKuis');
+            Route::get('guru/set-soal/{kuis}/{set}', 'lihatSet')->name('guru.setKuis.lihat');
         });
     });
 
     Route::group(['middleware' => 'is_siswa'], function () {
         Route::get('/dashboard', [DashboardSiswaController::class, "index"])->name('siswa.dashboard');
         Route::get('/daftar-materi', [DashboardSiswaController::class, "daftarMateri"])->name('siswa.daftar-materi');
+        Route::get('/progress', [DashboardSiswaController::class, 'progressSiswa'])->name('siswa.progress');
         Route::get('/perihal', [DashboardSiswaController::class, "perihal"])->name('siswa.perihal');
-
-        
-        Route::controller(DiskusiController::class)->group(function(){
-            Route::get('/diskusi/{bab}/{page}', 'getAllDiskusiByBabPage');
-            Route::post('/diskusi', 'create');
-        });
 
         Route::controller(KuisController::class)->group(function () {
             Route::get('/kuis/{jenis}', 'index')->name('siswa.kuis');
@@ -83,7 +94,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::controller(MateriController::class)->group(function () {
             Route::get('/materi/{bab}/{page}',  'index')->name('siswa.materi');
             Route::post('/materi/update-progress', 'updateProgress');
-        
+
+            Route::get('/materi/download/{bab}/{page}', 'downloadMateriPDF')->name('siswa.materi.download');
         });
     });
 

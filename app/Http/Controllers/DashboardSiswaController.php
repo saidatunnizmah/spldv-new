@@ -59,11 +59,19 @@ class DashboardSiswaController extends Controller
         $data['nilaiKuis3'] = Nilai::where('siswa_id', $siswaId)->where('jenis_kuis', 3)->latest()->take(3)->get();
         $data['nilaiEvaluasi'] = Nilai::where('siswa_id', $siswaId)->where('jenis_kuis', 4)->latest()->take(3)->get();
 
-        return  view('siswa.progress', $data);
+        return  view('siswa.daftar-materi', $data);
     }
 
     function perihal()
     {
         return view('siswa.perihal');
+    }
+
+    function progressSiswa() {
+        $data['kuis1'] = Nilai::where('siswa_id', auth()->user()->siswa->id)->where('jenis_kuis',1)->latest()->get();
+        $data['kuis2'] = Nilai::where('siswa_id', auth()->user()->siswa->id)->where('jenis_kuis',2)->latest()->get();
+        $data['kuis3'] = Nilai::where('siswa_id', auth()->user()->siswa->id)->where('jenis_kuis',3)->latest()->get();
+        $data['evaluasi'] = Nilai::where('siswa_id', auth()->user()->siswa->id)->where('jenis_kuis',4)->latest()->get();
+        return view('siswa.progress',$data);
     }
 }

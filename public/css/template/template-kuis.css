@@ -56,8 +56,11 @@
     font-weight: bold;
 }
 
-.nav-soal-item.answered{
+.nav-soal-item.current{
     background-color: #64B3B3;
+}
+.nav-soal-item.answered{
+    background-color: #9DDE8B;
 }
 .nav-soal-item.half-answered{
     background-color: #FFA62F;

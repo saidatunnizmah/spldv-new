@@ -27,7 +27,7 @@
                     <table class="table table-bordered">
                         <tr>
                             <th>Kelas</th>
-                            <td>{{ auth()->user()->siswa->kelas }}</td>
+                            <td>{{ auth()->user()->siswa->kelas->nama }}</td>
                         </tr>
                         <tr>
                             <th>
@@ -51,6 +51,7 @@
                 <div class="card-footer text-center">
                     <a class=" {{ $nilaiUser->nilai > 75? 'btn-success' : 'btn-danger' }} btn fw-bold" href="{{ route('siswa.kuis',['jenis'=>$nilaiUser->jenis_kuis]) }}">Coba Lagi</a>
                     <a class="btn btn-primary fw-bold {{ $nilaiUser->nilai > 75? '' : 'd-none' }}" href="{{ route('siswa.dashboard') }}">Kembali ke Dashboard</a>
+                    <a href="{{ route('siswa.materi',['bab'=>$nilaiUser->jenis_kuis,'page'=>'1']) }}" class="btn btn-info fw-bold">Kembali ke Materi</a>
                 </div>
             </div>
         </div>

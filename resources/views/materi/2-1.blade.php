@@ -4,6 +4,20 @@
         Penyelesaian SPLDV: Metode Eliminasi
     </div>
 </div>
+<div class="accordion accordion-flush my-2" id="accordionTujuan">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTujuan" aria-expanded="false" aria-controls="collapseTujuan">
+                Tujuan Pembelajaran
+            </button>
+        </h2>
+        <div id="collapseTujuan" class="accordion-collapse collapse mt-1" data-bs-parent="#accordionTujuan">
+            <div class="accordion-body fw-bold" id="tujuanContainer">
+                
+            </div>
+        </div>
+    </div>
+</div>
 <p class="materi-paragraph">
     Sistem persamaan linear dua variabel adalah dua atau lebih persamaan linear dengan dua variabel, yang mana kedua variabel tiap persamaan adalah sama, namun koefisien variabel dan konstanta untuk tiap persamaan belum tentu sama.
 </p>
@@ -340,4 +354,8 @@
         <li>Memilih variabel yang nilainya paling sederhana</li>
         <li>Melakukan hal yang sama terhadap variabel lainnya (\(y\)) sehingga memperoleh nilai variabel \(x\)</li>
     </ol>
+</div>
+
+<div class="text-center d-none" id="btnDownload">
+    <a href="{{ route('siswa.materi.download', ['bab'=>2,'page'=>1]) }}" class="btn btn-success">Download Materi</a>
 </div>

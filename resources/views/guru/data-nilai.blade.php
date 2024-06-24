@@ -24,6 +24,9 @@
                     <div class="tab-content" id="siswaTabContent">
                         @foreach ($kelas as $item)
                         <div class="tab-pane fade py-3 {{ $loop->first ? "show active" : "" }}" id="{{ 'kelas-'.$item }}-tab-pane" role="tabpanel" aria-labelledby="{{ 'kelas-'.$item }}-tab" tabindex="{{ $loop->index }}">
+                            <div class="text-end mb-3">
+                                <a href="{{ route('guru.dataNilai.exportNilaiKelas',['id'=>$item->id]) }}" class="btn btn-success">Export ke PDF</a>
+                            </div>
                             
                             <table class="table table-bordered align-middle">
                                 <thead class="table-success text-center">

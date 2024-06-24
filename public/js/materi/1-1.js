@@ -29,6 +29,7 @@ setTimeout(()=>{
         success: function(response){
             sudahNontonCheck.removeAttribute('disabled');
             $('#lock-1-2').addClass('d-none')
+            $('#btnDownload').removeClass('d-none')
         },
         error: function(reject){
             console.log(reject)

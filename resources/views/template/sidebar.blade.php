@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('siswa.progress') }}">
                     <i class="bi bi-clipboard-check-fill fs-5"></i>
                     Progres
                 </a>

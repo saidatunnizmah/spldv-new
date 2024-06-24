@@ -12,32 +12,32 @@ Ubahlah pernyataan berikut ke dalam bentuk sistem persamaan linear dua variabel:
 
 <div class="d-flex align-items-center gap-3 mt-3">
     Harga 1 ekor kelinci sebagai variabel:
-    <math-field class="field-answer" id="soal5_1"></math-field>
+    <math-field class="field-answer" id="soal4_1"></math-field>
 </div>
 <div class="d-flex align-items-center gap-3 mt-3">
     Harga 1 ekor kucing sebagai variabel:
-    <math-field class="field-answer" id="soal5_2"></math-field>
+    <math-field class="field-answer" id="soal4_2"></math-field>
 </div>
 
 <div class="mt-3">
     <span class="fw-bold">Persamaan 1 </span>
     
     <div class="d-flex align-items-center gap-2 mt-2">
-        <math-field class="field-answer" id="soal5_3"></math-field>
+        <math-field class="field-answer" id="soal4_3"></math-field>
         +
-        <math-field class="field-answer" id="soal5_4"></math-field>
+        <math-field class="field-answer" id="soal4_4"></math-field>
         =
-        <math-field class="field-answer" id="soal5_5"></math-field>
+        <math-field class="field-answer" id="soal4_5"></math-field>
     </div>
 </div>
 <div class="mt-3">
     <span class="fw-bold">Persamaan 2</span>
     
     <div class="d-flex align-items-center gap-2 mt-2">
-        <math-field class="field-answer" id="soal5_6"></math-field>
+        <math-field class="field-answer" id="soal4_6"></math-field>
         +
-        <math-field class="field-answer" id="soal5_7"></math-field>
+        <math-field class="field-answer" id="soal4_7"></math-field>
         =
-        <math-field class="field-answer" id="soal5_8"></math-field>
+        <math-field class="field-answer" id="soal4_8"></math-field>
     </div>
 </div>

@@ -1956,9 +1956,9 @@ class KuisController extends Controller
 
         // Loop Check Answer
         foreach ($keys as $key) {
-            if ($jenisKuis==1) {
+            if ($jenisKuis == 1 || $jenisKuis == 2) {
                 if (is_array($keyAnswer[$setSoal][$key])) {
-                    if (in_array($userAnswer[$key], $keyAnswer[$key])) {
+                    if (in_array($userAnswer[$key], $keyAnswer[$setSoal][$key])) {
                         $benar++;
                     }
                 } else {
@@ -1980,7 +1980,11 @@ class KuisController extends Controller
             }
         }
 
-        $nilai = $benar / count($keyAnswer) * 100;
+        if ($jenisKuis == 1 || $jenisKuis == 2) {
+            $nilai = $benar / count($keyAnswer[$setSoal]) * 100;
+        }else{
+            $nilai = $benar / count($keyAnswer) * 100;
+        }
         $percobaan = Nilai::where('siswa_id', $siswaId)->where('jenis_kuis', $request->jenisKuis)->count();
         $waktuPengerjaan = gmdate("H:i:s", $this->dataKuis[$jenisKuis]['waktu'] * 60 - $request->waktuPengerjaan);
 

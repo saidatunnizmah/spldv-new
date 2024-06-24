@@ -335,6 +335,7 @@ function cekSoalSelesai() {
             success: function(response){
                 if(response.status == 'updated'){
                     $('#lock-3-1').addClass('d-none');
+                    $('#btnDownload').removeClass('d-none')
                     btnSelanjutnya.setAttribute('data-bs-toggle','modal')
                     btnSelanjutnya.setAttribute('data-bs-target','#kuisModal')
                 }

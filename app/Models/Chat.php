@@ -12,6 +12,7 @@ class Chat extends Model
 
     protected $fillable = [
         'diskusi_id',
+        'kelas_id',
         'user_id',
         'pesan',
         'bab',

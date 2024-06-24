@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{{ route('landingPage') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('siswa.progress') }}">Materi</a>
+                        <a class="nav-link" href="{{ route('siswa.daftar-materi') }}">Materi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page"
@@ -46,237 +46,242 @@
     <div class="container mb-5">
         <div class="row" id="banner">
             <div class="col-12 py-5">
-                <h3 class="text-center fw-bold">
-                    Informasi
-                </h3>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="mb-0 h5 fw-semibold card-title h5">INFORMASI MEDIA</div>
-                    </div>
-                    <div class="p-5 card-body">
-                        <p class="mb-4 card-text">Media pembelajaran ini dibuat untuk memenuhi persyaratan dalam
-                            menyelesaikan program Strata-1 Pendidikan Komputer dengan judul:</p>
-                        <p class="fw-semibold fs-5 text-center card-text">PENGEMBANGAN MEDIA PEMBELAJARAN INTERAKTIF
-                            BERBASIS WEB TOPIK SISTEM PERSAMAAN LINEAR DUA VARIABEL BERKONTEKS LAHAN BASAH DENGAN METODE
-                            DRILL AND PRACTICE</p>
-                        <div>
-                            <table class="mt-5">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <p class="me-5 mb-0">Nama</p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-2">: Saidatun Nizmah</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="me-5 mb-0">Email</p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-2">: <a
-                                                    href="mailto:aniskateha@gmail.com">aniskateha@gmail.com</a></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="me-5 mb-0">Dosen Pembimbing 1</p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-2">: Dr. R. Ati Sukmawati, M.Kom</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="me-5 mb-0">Dosen Pembimbing 2</p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-2">: Rizky Pamuji, S.Kom.</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="me-5 mb-0">Program Studi</p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-2">: S-1 Pendidikan Komputer</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="me-5 mb-0">Fakultas</p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-2">: Fakultas Keguruan dan Ilmu Pendidikan (FKIP)</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="me-5 mb-0">Instansi</p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-2">: Universitas Lambung Mangkurat</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <ul class="nav nav-tabs" id="perihalTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="informasi-tab" data-bs-toggle="tab" data-bs-target="#informasi-tab-pane" type="button" role="tab" aria-controls="informasi-tab-pane" aria-selected="true">Informasi Media</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="petunjuk-tab" data-bs-toggle="tab" data-bs-target="#petunjuk-tab-pane" type="button" role="tab" aria-controls="petunjuk-tab-pane" aria-selected="false">Petunjuk Penggunaan Aplikasi</button>
+                    </li>
+                </ul>
+                <div class="tab-content mt-5" id="perihalTabContent">
+                    <div class="tab-pane fade show active" id="informasi-tab-pane" role="tabpanel" aria-labelledby="informasi-tab" tabindex="0">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="mb-0 h5 fw-semibold card-title h5">INFORMASI MEDIA</div>
+                            </div>
+                            <div class="p-5 card-body">
+                                <p class="mb-4 card-text">Media pembelajaran ini dibuat untuk memenuhi persyaratan dalam
+                                    menyelesaikan program Strata-1 Pendidikan Komputer dengan judul:</p>
+                                <p class="fw-semibold fs-5 text-center card-text">PENGEMBANGAN MEDIA PEMBELAJARAN INTERAKTIF
+                                    BERBASIS WEB TOPIK SISTEM PERSAMAAN LINEAR DUA VARIABEL BERKONTEKS LAHAN BASAH DENGAN METODE
+                                    DRILL AND PRACTICE</p>
+                                <div>
+                                    <table class="mt-5">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p class="me-5 mb-0">Nama</p>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-2">: Saidatun Nizmah</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="me-5 mb-0">Email</p>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-2">: <a
+                                                            href="mailto:aniskateha@gmail.com">aniskateha@gmail.com</a></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="me-5 mb-0">Dosen Pembimbing 1</p>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-2">: Dr. R. Ati Sukmawati, M.Kom</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="me-5 mb-0">Dosen Pembimbing 2</p>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-2">: Rizky Pamuji, S.Kom.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="me-5 mb-0">Program Studi</p>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-2">: S-1 Pendidikan Komputer</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="me-5 mb-0">Fakultas</p>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-2">: Fakultas Keguruan dan Ilmu Pendidikan (FKIP)</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="me-5 mb-0">Instansi</p>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-2">: Universitas Lambung Mangkurat</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <br><br>
-                {{-- <h3 class="text-center fw-bold">
-                    Petunjuk Penggunaan Aplikasi
-                </h3> --}}
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="mb-0 h5 fw-semibold card-title h5">PETUNJUK PENGGUNAAN APLIKASI</div>
-                    </div>
-                    <div class="p-5 card-body">
-                        <div class="container">
-                            <center>
-                                <h4>Gambar di bawah ini merupakan tampilan pada halaman awal.</h4>
-                            </center>
-                            <br>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="w3-container">
-                                        <img src="{{ asset('img/perihal/landing.png') }}" style="width:100%;" </div>
-                                    </div>
-                                    <div class="col">
-                                        Keterangan :<br><br>
-                                        <ul>
-                                            <li>Nomor 1 adalah navigasi</li>
-                                            Berfungsi untuk memudahkan pengguna untuk berpindah halaman dengan mengklik
-                                            nama halaman yang dituju.
-                                            <li>Nomor 2 adalah tombol untuk mulai belajar</li>
-                                            Jika tombol "Mulai Belajar" diklik maka akan mengarah ke halaman login.
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                <center>
-                                    <h4>Gambar di bawah ini merupakan tampilan pada halaman dashboard siswa.</h4>
-                                </center>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="w3-container">
-                                            <img src="{{ asset('img/perihal/beranda.png') }}" style="width:100%;" </div>
-                                        </div>
-                                        <div class="col">
-                                            Keterangan :<br><br>
-                                            <p>Pada halaman ini terdapat identitas pengguna(siswa) dan data pelaksanaan
-                                                kuis dan juga evaluasi.</p>
-                                            <ul>
-                                                <li>Nomor 1 adalah sidebar</li>
-                                                Berfungsi untuk memudahkan pengguna untuk berpindah halaman dengan
-                                                mengklik nama halaman yang dituju.
-                                                <li>Nomor 2 adalah tombol untuk logout</li>
-                                                Jika tombol diklik maka akan kembali ke halaman login.
-                                            </ul>
-                                        </div>
-                                    </div>
-
+                    <div class="tab-pane fade" id="petunjuk-tab-pane" role="tabpanel" aria-labelledby="petunjuk-tab" tabindex="0">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="mb-0 h5 fw-semibold card-title h5">PETUNJUK PENGGUNAAN APLIKASI</div>
+                            </div>
+                            <div class="p-5 card-body">
+                                <div class="container">
                                     <center>
-                                        <h4>Gambar di bawah ini merupakan tampilan pada halaman progres siswa.</h4>
+                                        <h4>Gambar di bawah ini merupakan tampilan pada halaman awal.</h4>
                                     </center>
                                     <br>
                                     <div class="row">
                                         <div class="col">
                                             <div class="w3-container">
-                                                <img src="{{ asset('img/perihal/progres.png') }}" style="width:100%;"
-                                                    </div>
+                                                <img src="{{ asset('img/perihal/landing.png') }}" style="width:100%;" </div>
                                             </div>
                                             <div class="col">
                                                 Keterangan :<br><br>
-                                                <p>Pada halaman ini terdapat progres pengguna dan data pelaksanaan kuis
-                                                    dan juga evaluasi. Jika judul materi diklik maka akan beralih ke
-                                                    haman materi</p>
+                                                <ul>
+                                                    <li>Nomor 1 adalah navigasi</li>
+                                                    Berfungsi untuk memudahkan pengguna untuk berpindah halaman dengan mengklik
+                                                    nama halaman yang dituju.
+                                                    <li>Nomor 2 adalah tombol untuk mulai belajar</li>
+                                                    Jika tombol "Mulai Belajar" diklik maka akan mengarah ke halaman login.
+        
+                                                </ul>
                                             </div>
                                         </div>
-
-
                                         <center>
-                                            <h4>Gambar di bawah ini merupakan tampilan pada halaman materi.</h4>
+                                            <h4>Gambar di bawah ini merupakan tampilan pada halaman dashboard siswa.</h4>
                                         </center>
                                         <br>
                                         <div class="row">
                                             <div class="col">
                                                 <div class="w3-container">
-                                                    <img src="{{ asset('img/perihal/materi.png') }}" style="width:100%;"
-                                                        </div>
+                                                    <img src="{{ asset('img/perihal/beranda.png') }}" style="width:100%;" </div>
                                                 </div>
                                                 <div class="col">
                                                     Keterangan :<br><br>
-                                                    <p>Pada halaman ini terdapat progres pengguna dan data pelaksanaan
-                                                        kuis dan juga evaluasi. Jika judul materi diklik maka akan
-                                                        beralih ke haman materi</p>
+                                                    <p>Pada halaman ini terdapat identitas pengguna(siswa) dan data pelaksanaan
+                                                        kuis dan juga evaluasi.</p>
                                                     <ul>
                                                         <li>Nomor 1 adalah sidebar</li>
-                                                        Berisikan daftar isi materi, jika pengguna selesai mengerjakan 1
-                                                        sub materi pengguna dapat berpindah ke materi selanjutnya dengan
-                                                        mengklik sub materi pada sidebar.
-                                                        <li>Nomor 2 adalah kolom materi</li>
-                                                        Kolom ini berisikan materi dan juga latihan soal.
-                                                        <li>Nomor 3 adalah ruang diskusi</li>
-                                                        Berfungsi untuk siswa mengirimkan chat dan berdiskusi.
+                                                        Berfungsi untuk memudahkan pengguna untuk berpindah halaman dengan
+                                                        mengklik nama halaman yang dituju.
+                                                        <li>Nomor 2 adalah tombol untuk logout</li>
+                                                        Jika tombol diklik maka akan kembali ke halaman login.
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <center>
-                                            <h4>Gambar di bawah ini merupakan tampilan pada halaman kuis dan E\evaluasi.</h4>
-                                        </center>
-                                        <br>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="w3-container">
-                                                    <img src="{{ asset('img/perihal/kuis.png') }}" style="width:100%;"
-                                                        </div>
-                                                </div>
+        
+                                            <center>
+                                                <h4>Gambar di bawah ini merupakan tampilan pada halaman progres siswa.</h4>
+                                            </center>
+                                            <br>
+                                            <div class="row">
                                                 <div class="col">
-                                                    Keterangan :<br><br>
-                                                    <ul>
-                                                        <li>Nomor 1 adalah soal.</li>
-                                                        <li>Nomor 2 adalah timer.</li>
-                                                        Menghitung  mundur dengan waktu pengerjaan 30 menit.
-                                                        <li>Nomor 3 adalah navigasi soal.</li>
-                                                        Berfungsi untuk mengetahui jumlah soal yang dikerjakan dan juga berpindah ke soal yang lain.
-                                                    </ul>
+                                                    <div class="w3-container">
+                                                        <img src="{{ asset('img/perihal/progres.png') }}" style="width:100%;"
+                                                            </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        Keterangan :<br><br>
+                                                        <p>Pada halaman ini terdapat progres pengguna dan data pelaksanaan kuis
+                                                            dan juga evaluasi. Jika judul materi diklik maka akan beralih ke
+                                                            haman materi</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <center>
-                                            <h4>Gambar di bawah ini merupakan tampilan pada halaman guru.</h4>
-                                        </center>
-                                        <br>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="w3-container">
-                                                    <img src="{{ asset('img/perihal/data.png') }}" style="width:100%;"
+        
+        
+                                                <center>
+                                                    <h4>Gambar di bawah ini merupakan tampilan pada halaman materi.</h4>
+                                                </center>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="w3-container">
+                                                            <img src="{{ asset('img/perihal/materi.png') }}" style="width:100%;"
+                                                                </div>
                                                         </div>
+                                                        <div class="col">
+                                                            Keterangan :<br><br>
+                                                            <p>Pada halaman ini terdapat progres pengguna dan data pelaksanaan
+                                                                kuis dan juga evaluasi. Jika judul materi diklik maka akan
+                                                                beralih ke haman materi</p>
+                                                            <ul>
+                                                                <li>Nomor 1 adalah sidebar</li>
+                                                                Berisikan daftar isi materi, jika pengguna selesai mengerjakan 1
+                                                                sub materi pengguna dapat berpindah ke materi selanjutnya dengan
+                                                                mengklik sub materi pada sidebar.
+                                                                <li>Nomor 2 adalah kolom materi</li>
+                                                                Kolom ini berisikan materi dan juga latihan soal.
+                                                                <li>Nomor 3 adalah ruang diskusi</li>
+                                                                Berfungsi untuk siswa mengirimkan chat dan berdiskusi.
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col">
-                                                    Keterangan :<br><br>
-                                                    Halaman ini berisikan data mengenai jumlah siswa dan nilai siswa.
-                                                   <ul>
-                                                        <li>Nomor 1 adalah sidebar.</li>
-                                                        Berfungsi untuk memudahkan pengguna untuk berpindah halaman dengan mengklik
-                                                        nama halaman yang dituju.
-                                                        <li>Nomor 2 adalah kolom untuk memilih kelas</li>
-                                                        Menghitung  mundur dengan waktu pengerjaan 30 menit.
-                                                        <li>Nomor 3 adalah navigasi soal.</li>
-                                                        Berfungsi untuk mengetahui jumlah soal yang dikerjakan dan juga berpindah ke soal yang lain.
-                                                    </ul>
+        
+                                                <center>
+                                                    <h4>Gambar di bawah ini merupakan tampilan pada halaman kuis dan E\evaluasi.</h4>
+                                                </center>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="w3-container">
+                                                            <img src="{{ asset('img/perihal/kuis.png') }}" style="width:100%;"
+                                                                </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            Keterangan :<br><br>
+                                                            <ul>
+                                                                <li>Nomor 1 adalah soal.</li>
+                                                                <li>Nomor 2 adalah timer.</li>
+                                                                Menghitung  mundur dengan waktu pengerjaan 30 menit.
+                                                                <li>Nomor 3 adalah navigasi soal.</li>
+                                                                Berfungsi untuk mengetahui jumlah soal yang dikerjakan dan juga berpindah ke soal yang lain.
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
+        
+                                                <center>
+                                                    <h4>Gambar di bawah ini merupakan tampilan pada halaman guru.</h4>
+                                                </center>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="w3-container">
+                                                            <img src="{{ asset('img/perihal/data.png') }}" style="width:100%;"
+                                                                </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            Keterangan :<br><br>
+                                                            Halaman ini berisikan data mengenai jumlah siswa dan nilai siswa.
+                                                           <ul>
+                                                                <li>Nomor 1 adalah sidebar.</li>
+                                                                Berfungsi untuk memudahkan pengguna untuk berpindah halaman dengan mengklik
+                                                                nama halaman yang dituju.
+                                                                <li>Nomor 2 adalah kolom untuk memilih kelas</li>
+                                                                Menghitung  mundur dengan waktu pengerjaan 30 menit.
+                                                                <li>Nomor 3 adalah navigasi soal.</li>
+                                                                Berfungsi untuk mengetahui jumlah soal yang dikerjakan dan juga berpindah ke soal yang lain.
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+        
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -295,6 +300,7 @@
                 </div>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
+    
 </html>

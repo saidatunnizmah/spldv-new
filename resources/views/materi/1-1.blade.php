@@ -4,6 +4,20 @@
         Bentuk Umum Sistem Persamaan Linear Dua Variabel
     </div>
 </div>
+<div class="accordion accordion-flush my-2" id="accordionTujuan">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTujuan" aria-expanded="false" aria-controls="collapseTujuan">
+                Tujuan Pembelajaran
+            </button>
+        </h2>
+        <div id="collapseTujuan" class="accordion-collapse collapse mt-1" data-bs-parent="#accordionTujuan">
+            <div class="accordion-body fw-bold" id="tujuanContainer">
+                
+            </div>
+        </div>
+    </div>
+</div>
 <div class="kegiatan-container">
     <div class="icon-container">
         <img src="{{ asset('img/icon-materi/tahukah.svg') }}" alt="" width="32px" height="32px">
@@ -23,4 +37,7 @@
           Sudah Menonton
         </label>
       </div>      
+</div>
+<div class="text-center d-none" id="btnDownload">
+    <a href="{{ route('siswa.materi.download', ['bab'=>1,'page'=>1]) }}" class="btn btn-success">Download Materi</a>
 </div>

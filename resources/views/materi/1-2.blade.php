@@ -4,6 +4,20 @@
         Bentuk Umum Sistem Persamaan Linear Dua Variabel
     </div>
 </div>
+<div class="accordion accordion-flush my-2" id="accordionTujuan">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTujuan" aria-expanded="false" aria-controls="collapseTujuan">
+                Tujuan Pembelajaran
+            </button>
+        </h2>
+        <div id="collapseTujuan" class="accordion-collapse collapse mt-1" data-bs-parent="#accordionTujuan">
+            <div class="accordion-body fw-bold" id="tujuanContainer">
+                
+            </div>
+        </div>
+    </div>
+</div>
 <p class="materi-paragraph">
     Sebelumnya kalian sudah menonton dan mengisikan jawaban pada dialog Utuh dan Palui, melalui percakapan Utuh menyebutkan perhitungan harga masing-masing barang bisa dilakukan dengan membuat persamaan linear dua variabel. Sebelum kita menghitung harga buah kasturi dan pakasam terlebih dahulu kita membuatnya ke dalam bentuk persamaan dengan dua variabel.
 </p>
@@ -277,4 +291,8 @@ Dapat ditulis sebagai:
 </p>
 <div class="text-center">
     <img src="{{ asset('img/spldv-3.png') }}" alt="">
+</div>
+
+<div class="text-center d-none" id="btnDownload">
+    <a href="{{ route('siswa.materi.download', ['bab'=>1,'page'=>2]) }}" class="btn btn-success">Download Materi</a>
 </div>

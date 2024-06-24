@@ -4,6 +4,20 @@
         Penyelesaian SPLDV: Metode Substitusi
     </div>
 </div>
+<div class="accordion accordion-flush my-2" id="accordionTujuan">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTujuan" aria-expanded="false" aria-controls="collapseTujuan">
+                Tujuan Pembelajaran
+            </button>
+        </h2>
+        <div id="collapseTujuan" class="accordion-collapse collapse mt-1" data-bs-parent="#accordionTujuan">
+            <div class="accordion-body fw-bold" id="tujuanContainer">
+                
+            </div>
+        </div>
+    </div>
+</div>
 <h5 class="materi-title mt-5"><span class="me-2">2.</span> Metode Substitusi</h5>
 <p class="materi-paragraph">
     Metode subtitusi adalah cara mengganti nilai \(x\) atau \(y\) dari suatu persamaan ke persamaan yang lainnya, jika salah satu suku dalam \(x\) atau \(y\) memiliki koefesien 1. Untuk lebih jelasnya mari kita gunakan metode eliminasi untuk mencari harga pakasam dan harga buah kasturi pada dialog sebelumnya.
@@ -239,3 +253,7 @@
 <p class="materi-paragraph">
     Metode eliminasi sering kali lebih efisien dalam mengurangi jumlah variabel, sedangkan metode subtitusi bisa lebih mudah diterapkan pada sistem persamaan yang memiliki persamaan yang relatif sederhana. Namun, kedua metode dapat menghasilkan solusi yang akurat dan valid untuk sistem persamaan linear dua variabel.
 </p>
+
+<div class="text-center d-none" id="btnDownload">
+    <a href="{{ route('siswa.materi.download', ['bab'=>2,'page'=>2]) }}" class="btn btn-success">Download Materi</a>
+</div>

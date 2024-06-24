@@ -54,33 +54,18 @@
                             <h6 class="fw-bold">Daftar Diskusi</h6>
                             <div id="diskusi-container">
                                 @foreach ($diskusi as $item)
-                                <button class="diskusi-item" data-diskusi="{{ $item->id }}" data-judul="{{ $item->judul }}" data-pembuat="">
+                                <button class="diskusi-item" data-diskusi="{{ $item->id }}" data-judul="{{ $item->judul }}" data-pembuat="{{ $item->pembuat }}" onclick="openDiskusi({{ $item->id }})">
                                     <div class="diskusi-title">
                                         <p class="text-start m-0">
                                             {{ $item->judul }}
                                         </p>
-                                        <small class="fw-normal">Dibuat oleh: {{ $item->pembuat }}</small>
+                                        <small class="fw-normal">{{ $item->deskripsi }}</small>
                                     </div>
                                     <i class="bi bi-chevron-right"></i>
                                 </button>
                                 @endforeach
                                 
                                 
-                            </div>
-                            <button id="btnBuatDiskusi">
-                                <div class="diskusi-title">
-                                    Buat Diskusi Baru
-                                </div>
-                                <i class="bi bi-plus-square-fill"></i>
-                            </button>
-                            <div id="formBuatDiskusi" class="d-none">
-                                <div class="input-group mb-3">
-                                    <input type="text" id="inputBuatDiskusi" class="form-control" placeholder="Masukkan judul diskusi.." aria-label="Masukkan judul diskusi.." aria-describedby="btnInputBuatDiskusi">
-                                    <button class="btn btn-outline-secondary" type="button" id="btnInputBuatDiskusi">Buat</button>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-danger btn-sm" id="btnBatalBuatDiskusi">Batal</button>    
-                                </div>                              
                             </div>
                         </div>
                         <div id="chat" class="d-none">
@@ -90,7 +75,7 @@
                                 </button>
                                 <div class="judul-container" >
                                     <p class="m-0 fw-bold" id="judulDiskusi"></p>
-                                    <small>Dibuat oleh: <span id="pembuatDiskusi"></span></small>
+                                    <small><span id="deskripsiDiskusi"></span></small>
                                 </div>
                             </div>
                             <div id="chat-container">
@@ -168,6 +153,7 @@
 <script async src="{{ asset('js/materi/chat.js') }}"></script>
 <script>
     const kelas = '{{ auth()->user()->siswa->kelas->nama }}'
+    let kelasId = '{{ auth()->user()->siswa->kelas->id }}'
     let title = "{{ $title }}"
     let id = {{ auth()->user()->id }}
     $('math-field').each(function(){

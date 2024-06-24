@@ -1,176 +1,166 @@
 @extends('template.template')
 
-@section('title','Progress - SPLDV')
+@section('title','Progress Siswa - SPLDV')
 
 @section('css-Addon')
-<link rel="stylesheet" href="{{ asset('css/siswa/progres.css') }}">
+<link rel="stylesheet" href="{{ asset('css/siswa/dashboard.css') }}">
 @endsection
 
 @section('content')
-<div class="container-fluid mb-5">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-12">
-            <h3 class="text-center fw-bold">
-                Daftar Materi
-            </h3>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12">
-            <div class="card materi-card">
-                <div class="card-body ">
-                    <div class="row">
-                        <div class="col-12">
-                            <a href="{{ route('siswa.materi', ['bab'=>0,'page'=>1]) }}" class="materi-title">Apersepsi</a>
-                            <div class="progress " role="progressbar" aria-valuenow="{{ $siswa->bab > 0 ? '100%' : '0%' }}" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: {{ $siswa->bab > 0 ? '100%' : '0%' }}">{{ $siswa->bab > 0 ? '100%' : '0%' }}</div>
-                            </div>
+        <div class="col">
+            <h1 class="text-center fw-bold">Progress Siswa</h1>
+            <ul class="nav nav-tabs" id="kuisTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="kuis1-tab" data-bs-toggle="tab" data-bs-target="#kuis1-tab-pane" type="button" role="tab" aria-controls="kuis1-tab-pane" aria-selected="true">Kuis 1</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="kuis2-tab" data-bs-toggle="tab" data-bs-target="#kuis2-tab-pane" type="button" role="tab" aria-controls="kuis2-tab-pane" aria-selected="false">Kuis 2</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="kuis3-tab" data-bs-toggle="tab" data-bs-target="#kuis3-tab-pane" type="button" role="tab" aria-controls="kuis3-tab-pane" aria-selected="false">Kuis 3</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="evaluasi-tab" data-bs-toggle="tab" data-bs-target="#evaluasi-tab-pane" type="button" role="tab" aria-controls="evaluasi-tab-pane" aria-selected="false">Evaluasi</button>
+                </li>
+            </ul>
+
+            <div class="tab-content mt-3" id="kuisTabContent">
+                <div class="tab-pane fade show active" id="kuis1-tab-pane" role="tabpanel" aria-labelledby="kuis1-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header">Kuis 1</div>
+                        <div class="card-body">
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Percobaan</th>
+                                        <th>Nilai</th>
+                                        <th>Waktu Percobaan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (count($kuis1))
+                                        @foreach ($kuis1 as $item)
+                                            <tr>
+                                                <td>{{ $item->percobaan }}</td>
+                                                <td>{{ $item->nilai }}</td>
+                                                <td>{{ $item->waktu_pengerjaan }}</td>
+                                            </tr>
+                                        @endforeach
+                                    @else
+                                        <tr class="text-center">
+                                            <td colspan="3">Anda Belum Pernah Mengerjakan Kuis 2</td>
+                                        </tr>
+                                    @endif
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="kuis2-tab-pane" role="tabpanel" aria-labelledby="kuis2-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header">Kuis 2</div>
+                        <div class="card-body">
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Percobaan</th>
+                                        <th>Nilai</th>
+                                        <th>Waktu Percobaan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (count($kuis2))
+                                        @foreach ($kuis2 as $item)
+                                        <tr>
+                                            <td>{{ $item->percobaan }}</td>
+                                            <td>{{ $item->nilai }}</td>
+                                            <td>{{ $item->waktu_pengerjaan }}</td>
+                                        </tr>
+                                        @endforeach
+                                    @else
+                                    <tr class="text-center">
+                                        <td colspan="3">Anda Belum Pernah Mengerjakan Kuis 2</td>
+                                    </tr>
+                                    @endif
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="kuis3-tab-pane" role="tabpanel" aria-labelledby="kuis3-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header">Kuis 3</div>
+                        <div class="card-body">
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Percobaan</th>
+                                        <th>Nilai</th>
+                                        <th>Waktu Percobaan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (count($kuis3))
+                                        @foreach ($kuis3 as $item)
+                                            <tr>
+                                                <td>{{ $item->percobaan }}</td>
+                                                <td>{{ $item->nilai }}</td>
+                                                <td>{{ $item->waktu_pengerjaan }}</td>
+                                            </tr>
+                                        @endforeach
+                                    @else
+                                    <tr class="text-center">
+                                        <td colspan="3">Anda Belum Pernah Mengerjakan Kuis 3</td>
+                                    </tr>
+                                    @endif
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="evaluasi-tab-pane" role="tabpanel" aria-labelledby="evaluasi-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header">Kuis 2</div>
+                        <div class="card-body">
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Percobaan</th>
+                                        <th>Nilai</th>
+                                        <th>Waktu Percobaan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (count($evaluasi))
+                                        @foreach ($evaluasi as $item)
+                                        <tr>
+                                            <td>{{ $item->percobaan }}</td>
+                                            <td>{{ $item->nilai }}</td>
+                                            <td>{{ $item->waktu_pengerjaan }}</td>
+                                        </tr>
+                                        @endforeach
+                                    @else
+                                    <tr class="text-center">
+                                        <td colspan="3">Anda Belum Pernah Mengerjakan Evaluasi</td>
+                                    </tr>
+                                    @endif
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card materi-card">
-                <div class="card-body ">
-                    <div class="row">
-                        <div class="col-8 position-relative">
-                            @if (auth()->user()->siswa->bab < 1)
-                                <div class="materi-lock">
-                                    <i class="bi bi-lock-fill fs-3"></i>
-                                </div>
-                            @endif
-                            <a href="{{ route('siswa.materi', ['bab'=>1,'page'=>1]) }}" class="materi-title">Konsep SPLDV</a>
-                            <div class="progress " role="progressbar" aria-valuenow="{{ $progress1 }}" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: {{ $progress1 }}%">{{ $progress1 }}%</div>
-                            </div>
-                        </div>
-                        <div class="col-4 border-start position-relative">
-                            @if (auth()->user()->siswa->bab < 2)
-                                <div class="materi-lock">
-                                    <i class="bi bi-lock-fill fs-3"></i>
-                                </div>
-                            @endif
-                            <a href="{{ route('siswa.kuis',['jenis'=>1]) }}" class="materi-title">Kuis 1</a>
-                            <small class="d-block fw-bold mt-2">Riwayat Nilai Kuis</small>
-                            <div class="percobaan mt-2">
-                                @if (count($nilaiKuis1)>0)
-                                    @foreach ($nilaiKuis1 as $item)
-                                        <div class="percobaan-container {{ $item->nilai < 75? 'border-danger' : '' }}">
-                                            {{ $item->nilai }}
-                                        </div>
-                                    @endforeach
-                                @else
-                                    Belum ada pengerjaan kuis
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card materi-card">
-                <div class="card-body ">
-                    <div class="row">
-                        <div class="col-8 position-relative">
-                            @if (auth()->user()->siswa->bab < 2)
-                                <div class="materi-lock">
-                                    <i class="bi bi-lock-fill fs-3"></i>
-                                </div>
-                            @endif
-                            <a href="{{ route('siswa.materi', ['bab'=>2,'page'=>1]) }}" class="materi-title">Penyelesaian SPLDV</a>
-                            <div class="progress " role="progressbar" aria-valuenow="{{ $progress2 }}" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: {{ $progress2 }}%">{{ $progress2 }}%</div>
-                            </div>
-                        </div>
-                        <div class="col-4 border-start position-relative">
-                            @if (auth()->user()->siswa->bab < 3)
-                                <div class="materi-lock">
-                                    <i class="bi bi-lock-fill fs-3"></i>
-                                </div>
-                            @endif
-                            <a href="{{ route('siswa.kuis',['jenis'=>2]) }}" class="materi-title">Kuis 2</a>
-                            <small class="d-block fw-bold mt-2">Riwayat Nilai Kuis</small>
-                            <div class="percobaan mt-2">
-                                @if (count($nilaiKuis2)>0)
-                                    @foreach ($nilaiKuis2 as $item)
-                                        <div class="percobaan-container {{ $item->nilai < 75? 'border-danger' : '' }}">
-                                            {{ $item->nilai }}
-                                        </div>
-                                    @endforeach
-                                @else
-                                    Belum ada pengerjaan kuis
-                                @endif
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card materi-card">
-                <div class="card-body ">
-                    <div class="row">
-                        <div class="col-8 position-relative">
-                            @if (auth()->user()->siswa->bab < 3)
-                                <div class="materi-lock">
-                                    <i class="bi bi-lock-fill fs-3"></i>
-                                </div>
-                            @endif
-                            <a href="{{ route('siswa.materi', ['bab'=>3,'page'=>1]) }}" class="materi-title">Penerapan SPLDV</a>
-                            <div class="progress " role="progressbar" aria-valuenow="{{ $progress3}}" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: {{ $progress3 }}%">{{ $progress3 }}%</div>
-                            </div>
-                        </div>
-                        <div class="col-4 border-start position-relative">
-                            @if (auth()->user()->siswa->bab < 4)
-                                <div class="materi-lock">
-                                    <i class="bi bi-lock-fill fs-3"></i>
-                                </div>
-                            @endif
-                            <a href="{{ route('siswa.kuis',['jenis'=>3]) }}" class="materi-title">Kuis 3</a>
-                            <small class="d-block fw-bold mt-2">Riwayat Nilai Kuis</small>
-                            <div class="percobaan mt-2">
-                                @if (count($nilaiKuis3)>0)
-                                    @foreach ($nilaiKuis3 as $item)
-                                        <div class="percobaan-container {{ $item->nilai < 75? 'border-danger' : '' }}">
-                                            {{ $item->nilai }}
-                                        </div>
-                                    @endforeach
-                                @else
-                                    Belum ada pengerjaan kuis
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card materi-card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5 position-relative">
-                            @if (auth()->user()->siswa->bab < 3)
-                                <div class="materi-lock">
-                                    <i class="bi bi-lock-fill fs-3"></i>
-                                </div>
-                            @endif
-                            <a href="{{ route('siswa.kuis', ['jenis'=>4]) }}" class="materi-title">Evaluasi</a>
-                        </div>
-                        <div class="col-7 border-start">
-                            <small class="d-block fw-bold mt-2">Riwayat Nilai Evaluasi</small>
-                            <div class="percobaan mt-2">
-                                @if (count($nilaiEvaluasi)>0)
-                                    @foreach ($nilaiEvaluasi as $item)
-                                        <div class="percobaan-container {{ $item->nilai < 75? 'border-danger' : '' }}">
-                                            {{ $item->nilai }}
-                                        </div>
-                                    @endforeach
-                                @else
-                                    Belum ada pengerjaan evaluasi
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+              
+              
+            
         </div>
     </div>
 </div>
+  
+@endsection
+
+@section('js-Addon')
+<script src="{{ asset('js/guru/dataNilai.js') }}"></script>
 @endsection

@@ -6,6 +6,7 @@ use App\Models\Kelas;
 use App\Models\Nilai;
 use App\Models\Siswa;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -17,12 +18,29 @@ class DashboardGuruController extends Controller
         $data['kelas'] = Kelas::with('siswa')->get();
         
         foreach ($data['kelas'] as $kelas) {
-            foreach ($kelas->siswa as $siswa) {
-                $data['kuis1'][$kelas->id][$siswa->id] = Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis',1)->count();
-                $data['kuis2'][$kelas->id][$siswa->id] = Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis',2)->count();
-                $data['kuis3'][$kelas->id][$siswa->id] = Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis',3)->count();
-                $data['evaluasi'][$kelas->id][$siswa->id] = Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis',4)->count();
-            }
+            $data['kuis1'][$kelas->id] = Nilai::select('siswa_id')->distinct()
+                                                                    ->join('siswas','nilais.siswa_id','=','siswas.id')
+                                                                    ->where('kelas_id', $kelas->id)                                                    
+                                                                    ->where('jenis_kuis',1)->count();
+            
+            $data['kuis1Lulus'][$kelas->id] =  DB::select("
+                    SELECT n1.siswa_id, n1.maxdate, n2.nilai FROM (
+                        SELECT siswa_id, MAX(created_at) as maxdate FROM nilais GROUP BY siswa_id  
+                    ) as n1
+                    LEFT JOIN nilais n2 ON n1.siswa_id = n2.siswa_id AND n2.created_at = n1.maxdate
+                    INNER JOIN siswas s ON n1.siswa_id = s.id
+                    WHERE s.kelas_id = '". $kelas->id ."' AND n2.jenis_kuis = 1 AND n2.nilai > 75
+                    ORDER BY n1.siswa_id;
+            ");                                                      
+            $data['kuis1Gagal'][$kelas->id] =  DB::select("
+                    SELECT n1.siswa_id, n1.maxdate, n2.nilai FROM (
+                        SELECT siswa_id, MAX(created_at) as maxdate FROM nilais GROUP BY siswa_id  
+                    ) as n1
+                    LEFT JOIN nilais n2 ON n1.siswa_id = n2.siswa_id AND n2.created_at = n1.maxdate
+                    INNER JOIN siswas s ON n1.siswa_id = s.id
+                    WHERE s.kelas_id = '". $kelas->id ."' AND n2.jenis_kuis = 1 AND n2.nilai < 75
+                    ORDER BY n1.siswa_id;
+            ");                                                      
         }
         // foreach(range('a','d') as $letter){
         //     $data['dataSiswa'][$letter]['totalSiswa'] = Siswa::where('kelas',strtoupper($letter))->count();
@@ -132,9 +150,10 @@ class DashboardGuruController extends Controller
         // }
         // dd($data['dataSiswaA']['totalKuis1Lulus']);
         // return view('guru.dashboard', $data);
-        return view('guru.dashboard');
+        return view('guru.dashboard', $data);
     }
 
+    // --------------- DATA SISWA --------------------------------
     function dataSiswa()
     {
         $data['kelas'] = Kelas::with('siswa')->get();
@@ -202,6 +221,7 @@ class DashboardGuruController extends Controller
         ]);
     }
 
+    // ---------------------- DATA NILAI-------------------------
     function dataNilai()
     {
         $data['kelas'] = Kelas::with('siswa')->get();
@@ -214,6 +234,23 @@ class DashboardGuruController extends Controller
             }
         }
         return view('guru.data-nilai', $data);
+    }
+
+    function exportNilaiToPdfByKelas($id){
+        $kelas = Kelas::with('siswa')->where('id',$id)->first();
+        $data['kelas'] = $kelas;
+        foreach ($kelas->siswa as $siswa) {
+            $data['siswa'][$siswa->id]['data'] = $siswa;
+            $data['siswa'][$siswa->id]['kuis1Latest']= Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis', 1)->latest()->first();
+            $data['siswa'][$siswa->id]['kuis2Latest']= Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis', 2)->latest()->first();
+            $data['siswa'][$siswa->id]['kuis3Latest']= Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis', 3)->latest()->first();
+            $data['siswa'][$siswa->id]['evaluasiLatest']= Nilai::where('siswa_id', $siswa->id)->where('jenis_kuis', 4)->latest()->first();
+        }
+
+        $pdf = Pdf::loadView('guru.export-nilai-kelas',$data);
+
+        // return view('guru.export-nilai-kelas', $data);
+        return $pdf->download('Nilai Siswa - Kelas '.$kelas->nama.'.pdf');
     }
 
     function getDataNilai($id)
@@ -285,5 +322,45 @@ class DashboardGuruController extends Controller
         $kelas = Kelas::findOrFail($id);
 
         return response()->json($kelas);
+    }
+
+    // ------------------ SET KUIS -------------------------
+    function setKuis() {
+        return view('guru.set-kuis');
+    }
+
+    function lihatSet($kuis, $set) {
+        $dataKuis = [
+            1 => [
+                'kuis' => "Bentuk Umum SPLDV",
+                'jumlahSoal' => 6,
+            ],
+            2 => [
+                'kuis' => "Penyelesaian SPLDV",
+                'jumlahSoal' => 10,
+            ],
+            3 => [
+                'kuis' => "Penerapan SPLDV",
+                'jumlahSoal' => 4,
+            ],
+            4 => [
+                'kuis' => "Evaluasi",
+                'jumlahSoal' => 10,
+            ]
+        ];
+        $data['kuis'] = $kuis;
+        $data['set'] = $set;
+        $data['jumlahSoal'] = $dataKuis[$kuis]['jumlahSoal'];
+        $data['judulKuis'] = $dataKuis[$kuis]['kuis'];
+
+        for ($i=1; $i <= $dataKuis[$kuis]['jumlahSoal']; $i++) { 
+            if (in_array($kuis, [1,2])) {
+                $data['soal'][$i] = view('kuis.'.$kuis.'-'. $i .'_'. $set);
+            }else{
+                $data['soal'][$i] = view('kuis.'.$kuis.'-'. $i);
+            }
+        }
+
+        return view('guru.lihat-set', $data);
     }
 }

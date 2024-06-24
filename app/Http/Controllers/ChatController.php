@@ -11,7 +11,7 @@ class ChatController extends Controller
 {
     function getChatsByDiskusi($diskusiId) {
         $diskusi = Diskusi::findOrFail($diskusiId);
-        $chats = Chat::where('diskusi_id', $diskusiId)->get();
+        $chats = Chat::where('diskusi_id', $diskusiId)->where('kelas_id', auth()->user()->siswa->kelas_id)->get();
         foreach ($chats as $chat) {
             $chat['senderName'] = $chat->user->name;
         }
@@ -42,6 +42,7 @@ class ChatController extends Controller
         date_default_timezone_set('Asia/Kuala_Lumpur');
         $newChat = Chat::create([
             'user_id' => auth()->user()->id,
+            'kelas_id' => auth()->user()->siswa->kelas_id,
             'diskusi_id' => $request->diskusiId,
             'pesan' => $request->pesan,
             'waktu_terkirim' => date("H:i")

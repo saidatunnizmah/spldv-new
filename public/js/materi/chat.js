@@ -1,10 +1,10 @@
 let daftarDiskusi = document.getElementById('daftar-diskusi');
 let btnBuatDiskusi = document.getElementById('btnBuatDiskusi')
-let formBuatDiskusi = document.getElementById('formBuatDiskusi');
-let inputBuatDiskusi = document.getElementById('inputBuatDiskusi');
-let btnInputBuatDiskusi = document.getElementById('btnInputBuatDiskusi')
-let btnBatalBuatDiskusi = document.getElementById('btnBatalBuatDiskusi')
-let btnDiskusi = document.querySelectorAll('.diskusi-item');
+// let formBuatDiskusi = document.getElementById('formBuatDiskusi');
+// let inputBuatDiskusi = document.getElementById('inputBuatDiskusi');
+// let btnInputBuatDiskusi = document.getElementById('btnInputBuatDiskusi')
+// let btnBatalBuatDiskusi = document.getElementById('btnBatalBuatDiskusi')
+let btnDiskusi = document.getElementsByClassName('diskusi-item');
 let btnBackDaftarDiskusi = document.getElementById('btnBackDaftarDiskusi');
 
 let chat = document.getElementById('chat');
@@ -16,16 +16,12 @@ let btnSend = document.getElementById('btn-kirim');
 // Enable pusher logging - don't include this in production
 Pusher.logToConsole = true;
 $(document).ready(function () {
-    
+    // getAllDataDiskusi()
     // getDataChat(kelas,bab,page)
-    btnBuatDiskusi.addEventListener('click', toggleFormBuatDiskusi);
-    btnBatalBuatDiskusi.addEventListener('click', toggleFormBuatDiskusi);
-    btnInputBuatDiskusi.addEventListener('click', createDiskusi);
+    // btnBuatDiskusi.addEventListener('click', toggleFormBuatDiskusi);
+    // btnBatalBuatDiskusi.addEventListener('click', toggleFormBuatDiskusi);
+    // btnInputBuatDiskusi.addEventListener('click', createDiskusi);
     btnBackDaftarDiskusi.addEventListener('click', closeDiskusi);
-
-    btnDiskusi.forEach(item => {
-        item.addEventListener('click', openDiskusi)
-    })
     
     btnSend.addEventListener('click',sendChat)
 });
@@ -62,6 +58,9 @@ function createDiskusi(){
                 $('#daftar-diskusi').prepend(element);
                 toggleFormBuatDiskusi()
                 getAllDataDiskusi()
+                btnDiskusi.forEach(item => {
+                    item.addEventListener('click', openDiskusi)
+                })
             },
             error: function(err){
                 console.log('error:'+ err);
@@ -75,7 +74,7 @@ function getAllDataDiskusi() {
             $('#diskusi-container').html('')
             response.forEach(item => {
                 let element = `
-                    <button class="diskusi-item" data-diskusi="${item.id}">
+                    <button class="diskusi-item" data-diskusi="${item.id}" onclick="openDiskusi(${item.id})">
                         <div class="diskusi-title">
                             <p class="text-start m-0">
                                 ${item.judul}
@@ -90,11 +89,9 @@ function getAllDataDiskusi() {
         },
     );
 }
-function openDiskusi() {
-    let diskusiId = this.getAttribute('data-diskusi');
-    
-    getChatsByDiskusi(diskusiId)
-    diskusiIdInput.value = diskusiId
+function openDiskusi(id) {    
+    getChatsByDiskusi(id)
+    diskusiIdInput.value = id
     daftarDiskusi.classList.add('d-none')
     chat.classList.remove('d-none')
 }
@@ -105,7 +102,7 @@ function closeDiskusi() {
 function getChatsByDiskusi(diskusiId) {
     $.get(`/get-chat/${diskusiId}`, function (response) {
         $('#judulDiskusi').html(response.diskusi.judul)
-        $('#pembuatDiskusi').html(response.diskusi.pembuat)
+        $('#deskripsiDiskusi').html(response.diskusi.deskripsi)
         $('#chat-container').html('')
 
         var pusher = new Pusher('fc84365476335bebe781', {
@@ -119,7 +116,7 @@ function getChatsByDiskusi(diskusiId) {
             }
         });
 
-        var channel = pusher.subscribe('private-chat.diskusi-'+ diskusiId);
+        var channel = pusher.subscribe('private-chat.diskusi-'+ diskusiId+ '-'+kelasId);
         channel.bind('ChatSend', function(data) {
             if (data.senderId != id) {
                 let base_path = window.location.origin;

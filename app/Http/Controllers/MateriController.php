@@ -8,6 +8,7 @@ use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 // use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Spatie\Browsershot\Browsershot;
 
@@ -42,8 +43,7 @@ class MateriController extends Controller
             $data['btnSelanjutnya']['type'] = 'modal';
         }
         
-        $data['diskusi'] = Diskusi::where('kelas_id', auth()->user()->siswa->kelas_id)
-                        ->where('bab', $bab)
+        $data['diskusi'] = Diskusi::where('bab', $bab)
                         ->where('page', $page)
                         ->latest()->get();
         $data['title'] = $this->materi[$bab][$page - 1];
@@ -93,6 +93,10 @@ class MateriController extends Controller
             'status' => 'updated',
             'jalan' => $jalan
         ]);
+    }
+
+    function downloadMateriPDF($bab, $page) {        
+        return response()->download(storage_path('app/public/materi-pdf/materi'.$bab.'-'.$page.'.pdf'));
     }
 
     function materiToPDFPage(){

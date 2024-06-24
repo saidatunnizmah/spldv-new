@@ -59,7 +59,7 @@
                                 <div class="mb-3">
                                     <label for="kelas" class="form-label">Kelas</label>
                                     <select class="form-select @error('kelas') is-invalid @enderror" id="kelas" name="kelas" aria-label="Default select example" >
-                                        <option>Pilih kelas anda</option>
+                                        <option value="">Pilih kelas anda</option>
                                         @foreach ($kelas as $item)
                                         <option value="{{ $item->id }}" {{ old('kelas') == $item->id? 'selected' : '' }}>{{ $item->nama }}</option>
                                         @endforeach

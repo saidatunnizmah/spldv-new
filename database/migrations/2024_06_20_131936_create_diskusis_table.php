@@ -15,12 +15,10 @@ class CreateDiskusisTable extends Migration
     {
         Schema::create('diskusis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kelas_id');
             $table->string('judul');
-            $table->string('pembuat');
+            $table->string('deskripsi');
             $table->integer('bab');
             $table->integer('page');
-            $table->enum('status', ['open', 'closed']);
             $table->timestamps();
         });
     }

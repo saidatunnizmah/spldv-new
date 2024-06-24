@@ -141,6 +141,7 @@ function cekSoalSelesai() {
             success: function(response){
                 if(response.status == 'updated'){
                     $('#lock-2-2').addClass('d-none');
+                    $('#btnDownload').removeClass('d-none')
                     btnSelanjutnya.removeAttribute('disabled');
                 }
             },

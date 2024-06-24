@@ -41,6 +41,12 @@
 }
 
 /* ISI MATERI */
+.accordion-button{
+    background-color: #64B3B3 !important;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px !important;
+}
 .materi-title{
     font-weight: 700;
     color: white;

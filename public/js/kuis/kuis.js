@@ -8,6 +8,7 @@ let urlSplitted = url.split("/");
 
 let jenis = urlSplitted[urlSplitted.length - 1];
 let soal = 1;
+setNavCurrentNumber(soal)
 let userAnswer = {};
 
 if (jenis == 1) {
@@ -50,6 +51,7 @@ $(".nav-soal-item").each(function (i) {
     $(this).on("click", function () {
         soal = $(this).val();
         getSoal(soal, setSoal);
+        setNavCurrentNumber(soal);
     });
 });
 $("#btn-nav-prev").on("click", () => {
@@ -69,14 +71,14 @@ $("#keluarBtn").on("click", () => {
     Swal.fire({
         title: "Anda yakin ingin keluar?",
         icon: "warning",
-        text: "Pengerjaan anda tidak masuk penilaian jika belum ada jawaban dimasukkan",
+        text: "Pengerjaan ini akan tetap dinilai meski belum ada yang dijawab",
         showCancelButton: true,
         confirmButtonText: "Iya, saya keluar",
         cancelButtonText: `Batal`,
         cancelButtonColor: "#d33",
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "/dashboard";
+            submitAnswer(userAnswer);
         }
     });
 });
@@ -107,7 +109,7 @@ $("#selesaiBtn").on("click", () => {
         cancelButtonColor: "#d33",
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "/dashboard";
+            submitAnswer(userAnswer);
         }
     });
 });
@@ -225,6 +227,16 @@ function addListenerToPilgan() {
     });
 }
 
+function setNavCurrentNumber(no){
+    $(".nav-soal-item").each(function (i) {
+        if(soal == $(this).val()){
+            $(this).addClass('current')
+        }else{
+            $(this).removeClass('current')
+        }
+    });
+}
+
 function setAnswerToField() {
     let noSoal = $('input[type="checkbox"]').attr("name");
     if ($('input[type="checkbox"]').length != 0) {
@@ -316,8 +328,12 @@ function checkAllSoalAnswered() {
 }
 
 function submitAnswer(userAnswer) {
+    // console.log(userAnswer.length);
     if (jenis == 1 && userAnswer["soal1_1"].length != 0) {
         userAnswer["soal1_1"] = userAnswer["soal1_1"].sort().join();
+    }
+    if (userAnswer.length == undefined) {
+        userAnswer['soal1_1'] = '1' 
     }
     $.ajax({
         type: "post",
