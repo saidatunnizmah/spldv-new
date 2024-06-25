@@ -13,7 +13,7 @@
         </h2>
         <div id="collapseTujuan" class="accordion-collapse collapse mt-1" data-bs-parent="#accordionTujuan">
             <div class="accordion-body fw-bold" id="tujuanContainer">
-                
+                Peserta didik dapat menyelesaikan sistem persamaan linear dengan metode subtitusi.
             </div>
         </div>
     </div>

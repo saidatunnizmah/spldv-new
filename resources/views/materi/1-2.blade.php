@@ -13,7 +13,7 @@
         </h2>
         <div id="collapseTujuan" class="accordion-collapse collapse mt-1" data-bs-parent="#accordionTujuan">
             <div class="accordion-body fw-bold" id="tujuanContainer">
-                
+                Pesetda didik dapat membuat dan menuliskan sistem persamaan linear dua variabel.
             </div>
         </div>
     </div>
