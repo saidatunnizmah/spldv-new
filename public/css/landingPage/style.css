@@ -13,7 +13,7 @@ min-height: 90vh;
     background-color: #C4DFDF;
 }
 .text{
-    color: #f8f8f8;
+    color: #f8f8f8 !important;
 }
 .text:hover{
     color: #f8f8f8;

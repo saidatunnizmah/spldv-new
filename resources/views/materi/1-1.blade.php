@@ -27,7 +27,10 @@
     </div>
 </div>
 <p class="materi-paragraph">
-    Selanjutnya kita akan mempelajari tentang sistem persamaan linear dua variabel. Sistem persamaan linear dua variabel merupakan salah satu konsep dasar dalam matematika yang memiliki aplikasi luas dalam berbagai bidang. Dalam pembelajaran ini, kita akan menjelajahi konsep dasar serta bagaimana menyelesaikan permasalahan dalam kehidupan sehari-hari yang berkaitan dengan sistem persamaan linear dua variabel. Sebelum mempelajari lebih lanjut simak dan lengkapilah dialog berikut!
+    Selanjutnya kita akan mempelajari tentang sistem persamaan linear dua variabel. 
+    Sistem persamaan linear dua variabel merupakan salah satu konsep dasar dalam matematika yang memiliki aplikasi luas dalam berbagai bidang. 
+    Dalam pembelajaran ini, kita akan menjelajahi konsep dasar serta bagaimana menyelesaikan permasalahan dalam kehidupan sehari-hari yang berkaitan dengan sistem persamaan linear dua variabel.
+     Sebelum mempelajari lebih lanjut <b>simak</b> dan <b>lengkapilah</b> dialog berikut serta <b>buat catatan</b> jawaban karena akan digunakan pada materi selanjutnya!
 </p>
 <div class="text-center">
     <iframe src="https://scratch.mit.edu/projects/918914056/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>

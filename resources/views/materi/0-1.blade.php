@@ -38,7 +38,7 @@
     <div class="form-check">
         <input class="form-check-input" type="checkbox" value=5 id="check-5">
         <label class="form-check-label" for="check-5">
-        \( x2-4=0 \)
+        \( x^2-4=0 \)
         </label>
         <div class="feedback"></div>
     </div>

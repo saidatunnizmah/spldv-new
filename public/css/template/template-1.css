@@ -5,16 +5,25 @@
 .navbar{
     padding: 0.95em 1em;
     background-color: #50a09b;
+    color: #e7e7e7;
     /* border-bottom: #141E46 1px solid; */
 }
 .navbar *{
-    color: #141E46;
+    color: #e7e7e7;
 }
+.navbar *:hover{
+    color: #e7e7e7;
+}
+.lg{
+    color: rgb(207, 6, 6) !important;
+}
+
 #user-avatar{
     border: 2px solid #141E46;
     border-radius: 50%;
     width: 35px;
 }
+
 
 /* SIDEBAR */
 #sidebar{

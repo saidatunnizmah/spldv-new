@@ -10,13 +10,13 @@
                         <div class="d-flex align-items-center gap-2">
                             <img src="{{ asset('img/anon-user.jpg') }}" alt="" id="user-avatar">
                             <div class="">
-                                <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle fw-bold text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                   Hai {{ Auth::user()->name }}!
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     {{-- <li><a class="dropdown-item" href="#">Profil</a></li> --}}
                                     {{-- <li><hr class="dropdown-divider"></li> --}}
-                                    <li><a class="dropdown-item logout" href="{{ route('logout') }}">Logout</a></li>
+                                    <li><a class="dropdown-item lg" href="{{ route('logout') }}">Logout</a></li>
                                 </ul>
                             </div>
                         </div>
