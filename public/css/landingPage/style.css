@@ -7,7 +7,17 @@ min-height: 90vh;
 }
 .btn-color{
     background-color: #50a09b;
+    color: #f8f8f8;
 }
 .btn-color:hover{
     background-color: #C4DFDF;
+}
+.text{
+    color: #f8f8f8;
+}
+.text:hover{
+    color: #f8f8f8;
+}
+.hv:hover{
+    color: #f8f8f8;
 }

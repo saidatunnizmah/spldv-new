@@ -22,13 +22,13 @@
             <div class="collapse navbar-collapse" id="navbarLandingPage">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                        <a class="nav-link text" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('siswa.daftar-materi') }}">Materi</a>
+                        <a class="nav-link hv" href="{{ route('siswa.daftar-materi') }}">Materi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('landingPage.perihal') }}">Perihal</a>
+                        <a class="nav-link hv" href="{{ route('landingPage.perihal') }}">Perihal</a>
                     </li>
                 </ul>
             </div>
