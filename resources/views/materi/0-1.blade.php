@@ -1,6 +1,6 @@
 <h5 class="materi-title">Apersepsi</h5>
 <p class="materi-paragraph">
-    Di kelas VII kalian sudah mempelajari persamaan linear satu variabel (PLSV). Untuk mengingatkan lagi, dari persamaan di bawah ini manakah yang merupakan persamaan linear satu variabel:
+    Di kelas VII kalian sudah mempelajari persamaan linear satu variabel (PLSV). Untuk mengingatkan lagi, dari persamaan di bawah ini yang merupakan persamaan linear satu variabel adalah:
 </p>
 
 <div class="materi-checkbox">

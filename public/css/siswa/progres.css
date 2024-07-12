@@ -16,10 +16,23 @@
     margin: 0.5em auto;
     max-width: 800px;
 }
-
+.btn-color{
+    background-color: #64B3B3;
+    color: #f8f8f8;
+}
+.btn-color:hover{
+    background-color: #C4DFDF;
+}
+.text{
+    color: black;
+    text-decoration: none;
+    /* color: black; */
+    font-weight: bold;
+    font-size: 24px;
+}
 .materi-title{
     text-decoration: none;
-    color: black;
+    /* color: black; */
     font-weight: bold;
     font-size: 24px;
 }
