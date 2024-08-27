@@ -162,13 +162,13 @@ class KuisController extends Controller
         ],
         2 => [
             'kuis' => "Penyelesaian SPLDV",
-            'jumlahSoal' => 10,
+            'jumlahSoal' => 4,
             'waktu' => 60,
             'keyAnswer' => []
         ],
         3 => [
             'kuis' => "Penerapan SPLDV",
-            'jumlahSoal' => 4,
+            'jumlahSoal' => 3,
             'waktu' => 30,
             'keyAnswer' => [
                 'soal1_1' => '10x',
@@ -228,7 +228,7 @@ class KuisController extends Controller
         $data['jenis'] = $jenis;
         $data['title'] = $this->dataKuis[$jenis]['kuis'];
         if ($jenis < 3) {
-            $data['setSoal'] = rand(1,3);
+            $data['setSoal'] = 1;
         }
         $data['jumlahSoal'] = $this->dataKuis[$jenis]['jumlahSoal'];
         $data['waktuPengerjaan'] = $this->dataKuis[$jenis]['waktu'];
